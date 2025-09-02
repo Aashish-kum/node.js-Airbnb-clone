@@ -1,0 +1,79 @@
+<header class="bg-white shadow-md">
+  <nav class="container mx-auto flex justify-between items-center px-6 py-3">
+    <!-- Brand -->
+    <a href="/" class="flex items-center space-x-2">
+      <div class="h-8 w-8 rounded-full bg-[#FF385C]"></div>
+      <span class="text-xl font-bold tracking-tight text-[#FF385C]">airbnb</span>
+    </a>
+
+    <!-- Links -->
+    <ul class="flex items-center space-x-6">
+      <% if (isloggedIn) { %>
+        <% if (user && user.userType === 'guest') { %>
+        <li>
+          <a href="/homes"
+            class="px-3 py-2 text-sm font-medium rounded-lg transition 
+              <%= currentPage === 'Home' ? 'bg-[#FF385C] text-white' : 'text-gray-700 hover:bg-gray-100' %>">
+            Home-list
+          </a>
+        </li>
+        <li>
+          <a href="/favourites"
+            class="px-3 py-2 text-sm font-medium rounded-lg transition 
+              <%= currentPage === 'favourite' ? 'bg-[#FF385C] text-white' : 'text-gray-700 hover:bg-gray-100' %>">
+            Favourite
+          </a>
+        </li>
+        <li>
+          <a href="/bookings"
+            class="px-3 py-2 text-sm font-medium rounded-lg transition 
+              <%= currentPage === 'bookings' ? 'bg-[#FF385C] text-white' : 'text-gray-700 hover:bg-gray-100' %>">
+            Booking
+          </a>
+        </li>
+        <% } else {%>
+        <li>
+          <a href="/host/Homeslist"
+            class="px-3 py-2 text-sm font-medium rounded-lg transition 
+              <%= currentPage === 'hostHome' ? 'bg-[#FF385C] text-white' : 'text-gray-700 hover:bg-gray-100' %>">
+            Host Homes List
+          </a>
+        </li>
+        <li>
+          <a href="/host/add-home"
+            class="px-3 py-2 text-sm font-medium rounded-lg transition 
+              <%= currentPage === 'addHome' ? 'bg-[#FF385C] text-white' : 'text-gray-700 hover:bg-gray-100' %>">
+            Add Home
+          </a>
+        </li>
+        <% } %>
+      <% } %>
+
+      <% if (!isloggedIn) { %>
+        <li>
+          <a href="/login"
+            class="px-3 py-2 text-sm font-medium rounded-lg transition 
+              <%= currentPage === 'login' ? 'bg-[#FF385C] text-white' : 'text-gray-700 hover:bg-gray-100' %>">
+            Login
+          </a>
+        </li>
+        <li>
+          <a href="/Signup"
+            class="px-3 py-2 text-sm font-medium rounded-lg transition 
+              <%= currentPage === 'signup' ? 'bg-[#FF385C] text-white' : 'text-gray-700 hover:bg-gray-100' %>">
+            SignUp
+          </a>
+        </li>
+      <% } else { %>
+        <li>
+          <form action="/logout" method="POST">
+            <button type="submit"
+              class="px-3 py-2 text-sm font-medium text-gray-700 rounded-lg hover:bg-gray-100 transition">
+              Logout
+            </button>
+          </form>
+        </li>
+      <% } %>
+    </ul>
+  </nav>
+</header>
