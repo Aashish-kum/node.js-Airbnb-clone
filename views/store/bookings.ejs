@@ -1,6 +1,305 @@
-<%- include('../partials/head') %>
-<body>
-    <%- include('../partials/nav.ejs') %>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title><%= pageTitle %></title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    html, body { font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, 'Helvetica Neue', Arial, 'Noto Sans', 'Apple Color Emoji', 'Segoe UI Emoji'; }
+  </style>
+</head>
+<body class="bg-white text-gray-900">
+  <%- include('../partials/BookingNev.ejs') %>
+  <!-- Top Nav -->
+  <header class="sticky top-0 z-40 bg-white/80 backdrop-blur border-b">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <!-- Logo -->
+        <div class="w-8 h-8 rounded-xl bg-rose-600 grid place-content-center text-white font-bold">A</div>
+        <span class="font-semibold hidden sm:block">Staybnb</span>
+      </div>
+      <div class="hidden md:flex items-center gap-2 rounded-full border px-4 py-2 shadow-sm hover:shadow md:text-sm">
+        <button class="px-2">Anywhere</button>
+        <span class="text-gray-300">|</span>
+        <button class="px-2">Any week</button>
+        <span class="text-gray-300">|</span>
+        <button class="px-2 text-gray-500">Add guests</button>
+        <div class="ml-2 p-2 rounded-full bg-rose-600">
+          <!-- search icon -->
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-white" viewBox="0 0 24 24" fill="currentColor"><path d="M21.53 20.47l-4.81-4.81A7.5 7.5 0 1016 17.5l4.81 4.81 1.72-1.84zM4.5 10a5.5 5.5 0 1111 0 5.5 5.5 0 01-11 0z"/></svg>
+        </div>
+      </div>
+      <div class="flex items-center gap-3">
+        <button class="hidden sm:block px-3 py-2 rounded-full hover:bg-gray-100 text-sm">List your home</button>
+        <button class="p-2 rounded-full hover:bg-gray-100">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 15a2 2 0 01-2 2H5l-2 2V5a2 2 0 012-2h14a2 2 0 012 2v10z"/></svg>
+        </button>
+        <div class="w-9 h-9 rounded-full overflow-hidden ring-1 ring-gray-200">
+          <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=200&auto=format&fit=crop" alt="avatar" class="w-full h-full object-cover" />
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Content -->
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <!-- Title + Meta -->
+    <section class="mb-5">
+      <h1 class="text-2xl sm:text-3xl font-semibold">Cozy Designer Loft near City Center</h1>
+      <div class="mt-2 flex flex-wrap items-center gap-2 text-sm text-gray-600">
+        <div class="flex items-center gap-1">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.62L12 2 9.19 8.62 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          <span>4.86</span><span>·</span><button class="underline">128 reviews</button>
+        </div>
+        <span>·</span>
+        <button class="underline">Superhost</button>
+        <span>·</span>
+        <button class="underline">Mumbai, India</button>
+      </div>
+    </section>
+
+    <!-- Gallery -->
+    <section class="grid grid-cols-1 sm:grid-cols-4 gap-3 mb-8">
+      <div class="sm:col-span-2 row-span-2 overflow-hidden rounded-2xl">
+        <img class="w-full h-full object-cover hover:scale-105 transition" src="https://images.unsplash.com/photo-1494526585095-c41746248156?q=80&w=1200&auto=format&fit=crop" alt="main"/>
+      </div>
+      <div class="overflow-hidden rounded-2xl"><img class="w-full h-full object-cover hover:scale-105 transition" src="https://images.unsplash.com/photo-1505691723518-36a5ac3b2bb3?q=80&w=600&auto=format&fit=crop" alt="room"/></div>
+      <div class="overflow-hidden rounded-2xl"><img class="w-full h-full object-cover hover:scale-105 transition" src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?q=80&w=600&auto=format&fit=crop" alt="kitchen"/></div>
+      <div class="overflow-hidden rounded-2xl"><img class="w-full h-full object-cover hover:scale-105 transition" src="https://images.unsplash.com/photo-1501045661006-fcebe0257c3f?q=80&w=600&auto=format&fit=crop" alt="bath"/></div>
+      <div class="overflow-hidden rounded-2xl hidden sm:block"><img class="w-full h-full object-cover hover:scale-105 transition" src="https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?q=80&w=600&auto=format&fit=crop" alt="extra"/></div>
+    </section>
+
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-10">
+      <!-- Left: details -->
+      <section class="lg:col-span-2">
+        <!-- quick facts -->
+        <div class="flex items-center justify-between pb-6 border-b">
+          <div>
+            <p class="text-lg font-medium">Entire rental unit hosted by Priya</p>
+            <p class="text-gray-600">2 guests · 1 bedroom · 1 bed · 1 bath</p>
+          </div>
+          <div class="flex -space-x-2">
+            <img class="w-10 h-10 rounded-full ring-2 ring-white" src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=100&auto=format&fit=crop" alt="host"/>
+            <img class="w-10 h-10 rounded-full ring-2 ring-white" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=100&auto=format&fit=crop" alt="guest"/>
+          </div>
+        </div>
+
+        <!-- amenities -->
+        <div class="py-6 border-b grid sm:grid-cols-2 gap-6">
+          <div class="flex items-start gap-3">
+            <svg class="w-5 h-5 mt-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M6 22h12a2 2 0 002-2v-7H4v7a2 2 0 002 2zM20 9h-6V3h-4v6H4l8-8 8 8z"/></svg>
+            <div>
+              <p class="font-medium">Great location</p>
+              <p class="text-gray-600 text-sm">95% of recent guests gave the location a 5-star rating.</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-3">
+            <svg class="w-5 h-5 mt-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3a9 9 0 100 18 9 9 0 000-18zm1 13h-2v-2h2v2zm0-4h-2V7h2v5z"/></svg>
+            <div>
+              <p class="font-medium">Sparkling clean</p>
+              <p class="text-gray-600 text-sm">This host is committed to Airbnb's enhanced cleaning process.</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-3">
+            <svg class="w-5 h-5 mt-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l9 4-9 4-9-4 9-4zm0 7l9 4-9 4-9-4 9-4zm0 7l9 4-9 4-9-4 9-4z"/></svg>
+            <div>
+              <p class="font-medium">Fast Wi‑Fi</p>
+              <p class="text-gray-600 text-sm">Perfect for remote work and streaming.</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-3">
+            <svg class="w-5 h-5 mt-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 22c4.97 0 9-4.03 9-9S16.97 4 12 4 3 8.03 3 13s4.03 9 9 9zm-1-9.59l-2.3-2.3-1.4 1.41L11 15.24l5.7-5.65-1.4-1.42L11 12.41z"/></svg>
+            <div>
+              <p class="font-medium">Self check‑in</p>
+              <p class="text-gray-600 text-sm">Keypad for easy entry any time after 3 PM.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- description -->
+        <div class="py-6 border-b space-y-3">
+          <p class="leading-relaxed">This designer loft blends comfort with convenience. Located steps away from cafes and transit, it features a bright open-plan living area, a fully equipped kitchen, and a cozy bedroom with premium linens.</p>
+          <p class="leading-relaxed">Ideal for couples or solo travelers. Enjoy Netflix-ready smart TV, high-speed Wi‑Fi, and a balcony with city views.</p>
+          <button class="underline font-medium">Show more</button>
+        </div>
+
+        <!-- reviews -->
+        <div class="py-6 border-b">
+          <div class="flex items-center gap-2 mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.62L12 2 9.19 8.62 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            <h2 class="text-lg font-semibold">4.86 · 128 reviews</h2>
+          </div>
+          <div class="grid sm:grid-cols-2 gap-6">
+            <div class="space-y-3">
+              <div class="flex items-center justify-between text-sm"><span>Cleanliness</span><div class="w-40 bg-gray-200 rounded-full h-2"><div class="h-2 rounded-full bg-gray-900" style="width:95%"></div></div><span>4.8</span></div>
+              <div class="flex items-center justify-between text-sm"><span>Communication</span><div class="w-40 bg-gray-200 rounded-full h-2"><div class="h-2 rounded-full bg-gray-900" style="width:96%"></div></div><span>4.9</span></div>
+              <div class="flex items-center justify-between text-sm"><span>Location</span><div class="w-40 bg-gray-200 rounded-full h-2"><div class="h-2 rounded-full bg-gray-900" style="width:94%"></div></div><span>4.8</span></div>
+            </div>
+            <div class="space-y-4">
+              <div class="p-4 border rounded-xl">
+                <p class="text-sm text-gray-700">“Wonderful stay! The loft was spotless and close to everything. Check‑in was seamless.”</p>
+                <p class="mt-2 text-sm font-medium">— Aarav, July 2025</p>
+              </div>
+              <div class="p-4 border rounded-xl">
+                <p class="text-sm text-gray-700">“Exactly like the photos. Great Wi‑Fi for my remote work week.”</p>
+                <p class="mt-2 text-sm font-medium">— Maya, June 2025</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- host -->
+        <div class="py-6">
+          <div class="flex items-start gap-4">
+            <img class="w-16 h-16 rounded-full object-cover" src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=120&auto=format&fit=crop" alt="host"/>
+            <div>
+              <h3 class="font-semibold text-lg">Hosted by Priya</h3>
+              <p class="text-sm text-gray-600">Superhost · 3 years hosting · Response time: within 1 hour</p>
+              <div class="mt-3 flex gap-3">
+                <button class="px-4 py-2 rounded-lg border hover:bg-gray-50">Contact host</button>
+                <button class="px-4 py-2 rounded-lg border hover:bg-gray-50">Report listing</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Right: booking card -->
+      <aside class="lg:col-span-1">
+        <div class="sticky top-24">
+          <div class="border rounded-2xl p-5 shadow-sm">
+            <div class="flex items-baseline gap-2">
+              <span class="text-2xl font-semibold">₹4,800</span>
+              <span class="text-gray-600">night</span>
+            </div>
+
+            <!-- Date inputs -->
+            <div class="mt-4 grid grid-cols-2 gap-3 text-sm">
+              <label class="block">
+                <span class="block font-medium">Check‑in</span>
+                <input id="checkin" type="date" class="mt-1 w-full rounded-xl border px-3 py-2 focus:outline-none focus:ring-2 focus:ring-gray-900" />
+              </label>
+              <label class="block">
+                <span class="block font-medium">Check‑out</span>
+                <input id="checkout" type="date" class="mt-1 w-full rounded-xl border px-3 py-2 focus:outline-none focus:ring-2 focus:ring-gray-900" />
+              </label>
+            </div>
+
+            <!-- Guests -->
+            <div class="mt-3">
+              <label class="block text-sm font-medium">Guests</label>
+              <div class="mt-1 flex items-center justify-between rounded-xl border px-3 py-2">
+                <div class="text-sm">
+                  <div class="font-medium">Adults</div>
+                  <div class="text-gray-500">Age 13+</div>
+                </div>
+                <div class="flex items-center gap-3">
+                  <button id="minus" class="w-8 h-8 grid place-content-center rounded-full border">−</button>
+                  <span id="guests" class="min-w-[1.5rem] text-center">1</span>
+                  <button id="plus" class="w-8 h-8 grid place-content-center rounded-full border">+</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Price breakdown -->
+            <div class="mt-4 space-y-2 text-sm">
+              <div class="flex justify-between"><span>₹4,800 × <span id="nights">0</span> nights</span><span id="subtotal">₹0</span></div>
+              <div class="flex justify-between"><span>Cleaning fee</span><span id="cleaning">₹600</span></div>
+              <div class="flex justify-between"><span>Service fee</span><span id="service">₹720</span></div>
+              <div class="border-t pt-2 flex justify-between font-semibold"><span>Total before taxes</span><span id="total">₹0</span></div>
+            </div>
+
+            <button id="reserve" class="mt-4 w-full rounded-xl bg-rose-600 text-white py-3 font-semibold hover:bg-rose-700">Reserve</button>
+            <p id="note" class="mt-2 text-center text-xs text-gray-600">You won't be charged yet</p>
+          </div>
+
+          <p class="text-xs text-gray-600 mt-3 text-center">This is a demo UI inspired by Airbnb for learning purposes.</p>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 text-sm text-gray-600 flex flex-col sm:flex-row gap-2 sm:items-center justify-between">
+      <p>© <span id="year"></span> Staybnb</p>
+      <nav class="flex flex-wrap gap-4">
+        <a class="hover:underline" href="#">Privacy</a>
+        <a class="hover:underline" href="#">Terms</a>
+        <a class="hover:underline" href="#">Sitemap</a>
+        <a class="hover:underline" href="#">Company details</a>
+      </nav>
+    </div>
+  </footer>
+
+  <!-- Minimal JS for demo calculations (no frameworks) -->
+  <script>
+    const nightly = 4800;
+    const cleaning = 600;
+    const service = 720;
+
+    const $ = (sel) => document.querySelector(sel);
+    const checkin = $('#checkin');
+    const checkout = $('#checkout');
+    const nightsEl = $('#nights');
+    const subtotalEl = $('#subtotal');
+    const totalEl = $('#total');
+    const guestsEl = $('#guests');
+
+    const formatINR = (n) => '₹' + n.toLocaleString('en-IN');
+
+    function daysBetween(a, b) {
+      const ms = 1000 * 60 * 60 * 24;
+      const start = new Date(a);
+      const end = new Date(b);
+      if (isNaN(start) || isNaN(end)) return 0;
+      return Math.max(0, Math.round((end - start) / ms));
+    }
+
+    function recalc() {
+      const n = daysBetween(checkin.value, checkout.value);
+      nightsEl.textContent = n;
+      const sub = n * nightly;
+      subtotalEl.textContent = formatINR(sub);
+      const total = n > 0 ? sub + cleaning + service : 0;
+      totalEl.textContent = formatINR(total);
+    }
+
+    ['change', 'input'].forEach(evt => {
+      checkin.addEventListener(evt, () => {
+        // auto set checkout to next day if invalid
+        if (checkout.value && new Date(checkin.value) >= new Date(checkout.value)) {
+          const d = new Date(checkin.value);
+          d.setDate(d.getDate() + 1);
+          checkout.valueAsDate = d;
+        }
+        recalc();
+      });
+      checkout.addEventListener(evt, recalc);
+    });
+
+    $('#plus').addEventListener('click', () => {
+      guestsEl.textContent = Math.min(4, Number(guestsEl.textContent) + 1);
+    });
+    $('#minus').addEventListener('click', () => {
+      guestsEl.textContent = Math.max(1, Number(guestsEl.textContent) - 1);
+    });
+
+    // min dates = today & tomorrow
+    const today = new Date();
+    const tomorrow = new Date();
+    tomorrow.setDate(today.getDate() + 1);
+    const toISO = (d) => d.toISOString().split('T')[0];
+    checkin.min = toISO(today);
+    checkout.min = toISO(tomorrow);
+
+    // footer year
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
-    <h1>Hello Booking</h1>
 </html>

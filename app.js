@@ -1,5 +1,6 @@
 // Core Module
 const path = require('path');
+require('dotenv').config();
 
 // External Module
 const express = require('express');
@@ -7,7 +8,7 @@ const session = require('express-session');
 const mongodbStore = require('connect-mongodb-session')(session);
 const multer = require('multer');
 
-const db_PATH = 'mongodb+srv://Agent:agent47@getforcode.2birdsz.mongodb.net/airbnbMongoose?retryWrites=true&w=majority&appName=GetforCode';
+const DB_PORT = process.env.DB_PORT;
 
 //Local Module
 const storeRouter = require("./routes/storeRouter")
@@ -28,7 +29,7 @@ app.set('view engine', 'ejs');
 app.set('views', 'views');
 
 const store = new mongodbStore({
-  uri: db_PATH,
+  uri: DB_PORT,
   collection: 'sessions'
 });
 
@@ -103,11 +104,11 @@ app.use(authRouter);
 
 app.use(errorController.pageNotFound);
 
-const PORT = 3000;
+const PORT = process.env.PORT;
 
 
 
-mongoose.connect(db_PATH).then(() => {
+mongoose.connect(DB_PORT).then(() => {
   console.log("Connected to MongoDB using Mongoose");
   app.listen(PORT, () => {
     console.log(`Server running on address http://localhost:${PORT}`);

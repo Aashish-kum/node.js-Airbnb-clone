@@ -3,14 +3,16 @@
 <body class="bg-gray-50">
   <%- include('../partials/nav') %>
 
-  <main class="container mx-auto bg-white shadow-lg rounded-2xl p-10 mt-12 max-w-7xl">
-    <h2 class="text-3xl text-[#FF385C] font-bold text-center mb-10">
+  <main class="container mx-auto bg-white shadow-lg rounded-2xl p-6 sm:p-10 mt-8 sm:mt-12 max-w-7xl">
+    <h2 class="text-2xl sm:text-3xl text-[#FF385C] font-bold text-center mb-8 sm:mb-10">
       Your Favourite Homes
     </h2>
 
-    <div class="flex flex-wrap justify-center gap-8">
+    <!-- Responsive Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
       <% favouriteHomes.forEach(home => { %>
-        <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition duration-300 w-full max-w-sm">
+        <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition duration-300 flex flex-col">
+          
           <!-- Image -->
           <div class="overflow-hidden">
             <img src="<%= home.photo %>" alt="<%= home.houseName %>" 
@@ -18,8 +20,8 @@
           </div>
 
           <!-- Card Content -->
-          <div class="p-5">
-            <h3 class="text-xl font-semibold text-gray-800 mb-2 truncate">
+          <div class="p-5 flex flex-col flex-grow">
+            <h3 class="text-lg sm:text-xl font-semibold text-gray-800 mb-2 truncate">
               <%= home.houseName %>
             </h3>
             <p class="text-gray-600 flex items-center mb-3">
@@ -29,7 +31,7 @@
 
             <!-- Price & Rating -->
             <div class="flex justify-between items-center mb-4">
-              <span class="text-lg font-bold text-[#FF385C]">
+              <span class="text-base sm:text-lg font-bold text-[#FF385C]">
                 ₹<%= home.price %> / night
               </span>
               <div class="flex items-center">
@@ -49,9 +51,9 @@
             </div>
 
             <!-- Remove Button -->
-            <form action="/favourites/delete/<%= home._id %>" method="POST">
+            <form action="/favourites/delete/<%= home._id %>" method="POST" class="mt-auto">
               <button type="submit" 
-                class="w-full bg-[#FF385C] text-white py-2 rounded-lg font-medium hover:bg-red-600 transition duration-300">
+                class="w-full bg-[#FF385C] text-white py-2 rounded-lg text-sm sm:text-base font-medium hover:bg-red-600 transition duration-300">
                 Remove from Favourites
               </button>
             </form>
