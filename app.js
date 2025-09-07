@@ -86,6 +86,7 @@ app.use(session({
 
 app.use((req, res, next) => {
   req.isloggedIn = req.session.isloggedIn;
+  // req.userType = req.session.userType;
   next();
 });
 

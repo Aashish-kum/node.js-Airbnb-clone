@@ -4,15 +4,19 @@ const bcrypt = require("bcryptjs");
 
 
 exports.getLogin = (req, res, next) => {
+    // const userType = req.session.user ? req.session.user.userType : null;
+    // console.log("userType:", userType);
+
     res.render("auth/login", {
         pageTitle: "Login",
         currentPage: "login",
         errors: [],
-        isloggedIn: false,
+        isloggedIn: req.session.isloggedIn || false,
         oldInput: { email: "" },
-        user: {}
+        user: {},
+        // user: req.session.user || {},
     });
-}
+};
 
 
 exports.getSignUp = (req, res, next) => {
@@ -22,7 +26,8 @@ exports.getSignUp = (req, res, next) => {
         isloggedIn: false,
         errors: [],
         oldInput: { fullname: "", email: "", password: "", userType: "" },
-        user: {}
+        user: {},
+    
     });
 }
 
@@ -98,7 +103,7 @@ exports.postSignUp = [
                 isloggedIn: false,
                 errors: errors.array().map(err => err.msg),
                 oldInput: { fullname, email, password, userType },
-                user: {}
+                user: {},
             });
         }
 
@@ -115,7 +120,7 @@ exports.postSignUp = [
                 isloggedIn: false,
                 errors: [err.message],
                 oldInput: { fullname, email, password, userType },
-                user: {}
+                user: {},
             });
         })
 
@@ -133,7 +138,7 @@ exports.postLogin = async (req, res, next) => {
             isloggedIn: false,
             errors: ["User dose not Exist"],
             oldInput: { email },
-            user: {}
+            user: {},
         });
     }
 
@@ -145,7 +150,7 @@ exports.postLogin = async (req, res, next) => {
             isloggedIn: false,
             errors: ["Invalid Password"],
             oldInput: { email },
-            user: {}
+            user: {},
         });
     }
 

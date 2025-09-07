@@ -5,8 +5,16 @@ const User = require('../models/user');
 
 exports.getIndex = (req, res, next) => {
   console.log("Session Object:", req.session);
+  console.log("userType is : ",req.session.user.userType);
   Home.find().then(registeredHomes => {
-    res.render('store/index', { registeredHomes: registeredHomes, pageTitle: 'Index', currentPage: 'index', isloggedIn: req.isloggedIn, user: req.session.user, userType: req.userType });
+    res.render('store/index', { 
+      registeredHomes: registeredHomes, 
+      pageTitle: 'Index', 
+      currentPage: 'index', 
+      isloggedIn: req.session.isloggedIn || false, 
+      user: req.session.user || null, 
+      userType: req.session.user ? req.session.user.userType : null
+    });
   });
 
   // console.log(registeredHomes);
@@ -15,7 +23,14 @@ exports.getIndex = (req, res, next) => {
 exports.getHomes = (req, res, next) => {
 
   Home.find().then(registeredHomes => {
-    res.render('store/home-list', { registeredHomes: registeredHomes, pageTitle: 'airbnb Home', currentPage: 'Home', isloggedIn: req.isloggedIn, user: req.session.user });
+    res.render('store/home-list', { 
+      registeredHomes: registeredHomes, 
+      pageTitle: 'airbnb Home', 
+      currentPage: 'Home', 
+      isloggedIn: req.session.isloggedIn || false, 
+      user: req.session.user || null, 
+      userType: req.session.user ? req.session.user.userType : null
+    });
   });
 
   // console.log(registeredHomes);
@@ -25,7 +40,13 @@ exports.getHomes = (req, res, next) => {
 
 exports.getBookings = (req, res, next) => {
 
-  res.render('store/bookings', { pageTitle: 'My Bookings', currentPage: 'bookings', isloggedIn: req.isloggedIn, user: req.session.user });
+  res.render('store/bookings', { 
+    pageTitle: 'My Bookings', 
+    currentPage: 'bookings', 
+    isloggedIn: req.session.isloggedIn || false, 
+    user: req.session.user || null, 
+    userType: req.session.user ? req.session.user.userType : null
+  });
   // console.log(registeredHomes);  
 }
 
@@ -36,8 +57,9 @@ exports.getfavouriteList = async (req, res, next) => {
     favouriteHomes: user.favourites, 
     pageTitle: 'My favourite-list', 
     currentPage: 'favourite', 
-    isloggedIn: req.isloggedIn, 
-    user: req.session.user 
+    isloggedIn: req.session.isloggedIn || false, 
+    user: req.session.user || null, 
+    userType: req.session.user ? req.session.user.userType : null
   });
 
   // console.log(registeredHomes);
@@ -77,12 +99,25 @@ exports.getHomeById = (req, res, next) => {
 
     if (!home) {
       console.log("Home not found with id: " + home);
-      return res.status(404).render('404', { pageTitle: 'Page Not Found', currentPage: 'not-found', isloggedIn: req.isloggedIn, user: req.session.user });
+      return res.status(404).render('404', { 
+        pageTitle: 'Page Not Found', 
+        currentPage: 'not-found', 
+        isloggedIn: req.session.isloggedIn || false, 
+        user: req.session.user || null, 
+        userType: req.session.user ? req.session.user.userType : null 
+      });
       // res.redirect('/homes'); // Redirect to home page if home not found
 
     } else {
       console.log("Home found with id: " + home);
-      res.render('store/home-detail', { home: home, pageTitle: home.houseName, currentPage: 'home-detail', isloggedIn: req.isloggedIn, user: req.session.user });
+      res.render('store/home-detail', { 
+        home: home, 
+        pageTitle: home.houseName, 
+        currentPage: 'home-detail', 
+        isloggedIn: req.session.isloggedIn || false, 
+        user: req.session.user || null, 
+        userType: req.session.user ? req.session.user.userType : null 
+      });
     }
   });
 

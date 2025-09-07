@@ -3,7 +3,8 @@ exports.pageNotFound = (req, res, next) => {
   .render('404', {
     pageTitle: 'Page Not Found', 
     currentPage: '404', 
-    isloggedIn: req.isloggedIn,
-    user: req.session.user
+    isloggedIn: req.session.isloggedIn || false, 
+    user: req.session.user || null, 
+    userType: req.session.user ? req.session.user.userType : null
   });
 }

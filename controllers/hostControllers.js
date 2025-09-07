@@ -8,8 +8,9 @@ exports.getAddhome = (req, res, next) => {
     pageTitle: 'Add Home to airbnb',
     currentPage: 'addHome',
     editing: false,
-    isloggedIn: req.isloggedIn,
-    user: req.session.user
+    isloggedIn: req.session.isloggedIn || false, 
+    user: req.session.user || null, 
+    userType: req.session.user ? req.session.user.userType : null
   });
 }
 
@@ -31,8 +32,9 @@ exports.getEditHomes = (req, res, next) => {
       currentPage: 'hostHome',
       home: home,
       editing: editing,
-      isloggedIn: req.isloggedIn,
-      user: req.session.user
+      isloggedIn: req.session.isloggedIn || false, 
+      user: req.session.user || null, 
+      userType: req.session.user ? req.session.user.userType : null
     });
   });
 };
@@ -75,7 +77,13 @@ exports.postAddhome = (req, res, next) => {
 exports.getHostHomeslist = (req, res, next) => {
 
   Home.find().then(registeredHomes => {
-    res.render('host/host-home-list', { registeredHomes: registeredHomes, pageTitle: 'Host-Home', currentPage: 'hostHome', isloggedIn: req.isloggedIn, user: req.session.user });
+    res.render('host/host-home-list', { 
+      registeredHomes: registeredHomes, 
+      pageTitle: 'Host-Home', currentPage: 'hostHome', 
+      isloggedIn: req.session.isloggedIn || false, 
+      user: req.session.user || null, 
+      userType: req.session.user ? req.session.user.userType : null 
+    });
   });
 
   // console.log(registeredHomes);

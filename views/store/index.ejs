@@ -57,7 +57,7 @@
             <!-- Buttons -->
             <div class="mt-auto flex gap-3">
               <!-- Details Button -->
-              <% if (isloggedIn) { %>
+              <% if (userType === "guest") { %>
                 <a href="/bookings" 
              class="flex-1 bg-blue-600 text-white py-2 rounded-lg font-medium text-center hover:bg-blue-700 transition">
             Book Now
