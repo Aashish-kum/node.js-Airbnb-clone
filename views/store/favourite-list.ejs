@@ -3,6 +3,8 @@
 <body class="bg-gray-50">
   <%- include('../partials/nav') %>
 
+  <% if (favouriteHomes && favouriteHomes.length > 0) { %>
+
   <main class="container mx-auto bg-white shadow-lg rounded-2xl p-6 sm:p-10 mt-8 sm:mt-12 max-w-7xl">
     <h2 class="text-2xl sm:text-3xl text-[#FF385C] font-bold text-center mb-8 sm:mb-10">
       Your Favourite Homes
@@ -62,5 +64,25 @@
       <% }) %>
     </div>
   </main>
+ <% } else { %>
+  <div class="col-span-full flex flex-col items-center justify-center py-12 bg-gray-50 rounded-lg shadow-inner">
+    <svg xmlns="http://www.w3.org/2000/svg" 
+         class="h-12 w-12 text-red-400 mb-4" 
+         fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+        d="M4.318 6.318a4.5 4.5 0 016.364 0L12 7.636l1.318-1.318a4.5 
+           4.5 0 116.364 6.364L12 21.364l-7.682-7.682a4.5 
+           4.5 0 010-6.364z" />
+    </svg>
+    <p class="text-gray-600 text-lg font-medium mb-2">
+      You haven’t added any favorites yet.
+    </p>
+    <a href="/homes" 
+       class="inline-block px-6 py-2 mt-2 bg-red-500 text-white rounded-full shadow-md hover:bg-red-600 transition">
+      Browse Homes
+    </a>
+  </div>
+<% } %>
+
 </body>
 </html>
