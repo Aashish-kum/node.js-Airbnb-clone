@@ -3,45 +3,45 @@
 
   <body>
     <%- include('../partials/nav') %>
-     <main class="container mx-auto bg-white shadow-lg rounded-lg p-6 sm:p-8 mt-10 max-w-6xl">
-    <h2 class="text-2xl sm:text-3xl text-red-500 font-bold text-center mb-6">
-      Here are our registered homes:
-    </h2>
+      <main class="container mx-auto bg-white shadow-lg rounded-lg p-6 sm:p-8 mt-10 max-w-6xl">
+        <h2 class="text-2xl sm:text-3xl text-red-500 font-bold text-center mb-6">
+          Here are our registered homes:
+        </h2>
 
-    <!-- Responsive Grid -->
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-      <% registeredHomes.forEach(home => { %>
-        <div
-          class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300 flex flex-col">
-          
-          <!-- Image -->
-          <% if (isloggedIn) { %>
-          <a href="/homes/<%= home._id %>">
-            <% } %>
-            <img src="<%= home.photo %>" class="w-full h-52 object-cover transform hover:scale-105 transition duration-300" />
-          </a>
-          
+        <!-- Responsive Grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <% registeredHomes.forEach(home=> { %>
+            <div
+              class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300 flex flex-col">
 
-          <!-- Content -->
-          <div class="p-4 flex flex-col flex-grow">
-            <h3 class="text-lg sm:text-xl font-semibold text-gray-800 mb-2">
-              <%= home.houseName %>
-            </h3>
-            <p class="text-gray-600 mb-2">
-              <i class="fas fa-map-marker-alt mr-2"></i>
-              <%= home.location %>
-            </p>
+              <!-- Image -->
+              <% if (userType==="guest" ) { %>
+                <a href="/homes/<%= home._id %>">
+                  <% } %>
+                    <img src="<%= home.photo %>"
+                      class="w-full h-52 object-cover transform hover:scale-105 transition duration-300" />
+                </a>
 
-            <!-- Price + Rating -->
-            <div class="flex justify-between items-center mb-4">
-              <span class="text-base sm:text-lg font-bold text-red-500">
-                Rs <%= home.price %> / night
-              </span>
-              <div class="flex items-center">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor"
-                  viewBox="0 0 24 24" class="w-5 h-5 text-yellow-400 mr-1">
-                  <path fill-rule="evenodd"
-                    d="M10.788 3.21c.448-1.077 1.976-1.077 
+
+                <!-- Content -->
+                <div class="p-4 flex flex-col flex-grow">
+                  <h3 class="text-lg sm:text-xl font-semibold text-gray-800 mb-2">
+                    <%= home.houseName %>
+                  </h3>
+                  <p class="text-gray-600 mb-2">
+                    <i class="fas fa-map-marker-alt mr-2"></i>
+                    <%= home.location %>
+                  </p>
+
+                  <!-- Price + Rating -->
+                  <div class="flex justify-between items-center mb-4">
+                    <span class="text-base sm:text-lg font-bold text-red-500">
+                      Rs <%= home.price %> / night
+                    </span>
+                    <div class="flex items-center">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24"
+                        class="w-5 h-5 text-yellow-400 mr-1">
+                        <path fill-rule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 
                        2.424 0l2.082 5.007 5.404.433c1.164.093 
                        1.636 1.545.749 2.305l-4.117 3.527 
                        1.257 5.273c.271 1.136-.964 2.033-1.96 
@@ -49,26 +49,102 @@
                        -.29-1.96-1.425l1.257-5.273-4.117-3.527
                        c-.887-.76-.415-2.212.749-2.305l5.404-.433 
                        2.082-5.006z" clip-rule="evenodd" />
-                </svg>
-                <span class="text-gray-700"><%= home.rating %></span>
-              </div>
-            </div>
+                      </svg>
+                      <span class="text-gray-700">
+                        <%= home.rating %>
+                      </span>
+                    </div>
+                  </div>
 
-            <!-- Buttons -->
-            <div class="mt-auto flex gap-3">
-              <!-- Details Button -->
-              <% if (userType === "guest") { %>
-                <a href="/bookings" 
-             class="flex-1 bg-blue-600 text-white py-2 rounded-lg font-medium text-center hover:bg-blue-700 transition">
-            Book Now
-          </a>
-                <% } %>
+                  <!-- Buttons -->
+                  <div class="mt-auto flex gap-3">
+                    <!-- Details Button -->
+                    <% if (userType==="guest" ) { %>
+                      <a href="/bookings"
+                        class="flex-1 bg-blue-600 text-white py-2 rounded-lg font-medium text-center hover:bg-blue-700 transition">
+                        Book Now
+                      </a>
+                      <% } %>
+                  </div>
+                </div>
             </div>
-          </div>
+            <% }) %>
         </div>
-      <% }) %>
+      </main>
+      <footer class="bg-gray-100 border-t mt-10">
+  <div class="max-w-7xl mx-auto px-6 py-12">
+    
+    <!-- Footer Grid -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-10 text-sm text-gray-700">
+      
+      <!-- Column 1 -->
+      <div>
+        <h3 class="font-semibold text-gray-900 mb-4">Support</h3>
+        <ul class="space-y-2">
+          <li><a href="#" class="hover:text-black hover:underline transition">Help Center</a></li>
+          <li><a href="#" class="hover:text-black hover:underline transition">AirCover</a></li>
+          <li><a href="#" class="hover:text-black hover:underline transition">Anti-discrimination</a></li>
+          <li><a href="#" class="hover:text-black hover:underline transition">Disability support</a></li>
+          <li><a href="#" class="hover:text-black hover:underline transition">Cancellation options</a></li>
+        </ul>
+      </div>
+
+      <!-- Column 2 -->
+      <div>
+        <h3 class="font-semibold text-gray-900 mb-4">Hosting</h3>
+        <ul class="space-y-2">
+          <li><a href="#" class="hover:text-black hover:underline transition">Airbnb your home</a></li>
+          <li><a href="#" class="hover:text-black hover:underline transition">AirCover for Hosts</a></li>
+          <li><a href="#" class="hover:text-black hover:underline transition">Explore hosting resources</a></li>
+          <li><a href="#" class="hover:text-black hover:underline transition">Community forum</a></li>
+        </ul>
+      </div>
+
+      <!-- Column 3 -->
+      <div>
+        <h3 class="font-semibold text-gray-900 mb-4">Company</h3>
+        <ul class="space-y-2">
+          <li><a href="#" class="hover:text-black hover:underline transition">About us</a></li>
+          <li><a href="#" class="hover:text-black hover:underline transition">Careers</a></li>
+          <li><a href="#" class="hover:text-black hover:underline transition">Newsroom</a></li>
+          <li><a href="#" class="hover:text-black hover:underline transition">Investors</a></li>
+        </ul>
+      </div>
+
+      <!-- Column 4 -->
+      <div>
+        <h3 class="font-semibold text-gray-900 mb-4">Discover</h3>
+        <ul class="space-y-2">
+          <li><a href="#" class="hover:text-black hover:underline transition">Trust & Safety</a></li>
+          <li><a href="#" class="hover:text-black hover:underline transition">Travel Credit</a></li>
+          <li><a href="#" class="hover:text-black hover:underline transition">Gift cards</a></li>
+          <li><a href="#" class="hover:text-black hover:underline transition">Airbnb.org</a></li>
+        </ul>
+      </div>
+
     </div>
-  </main>
+
+    <!-- Bottom Bar -->
+    <div class="mt-10 border-t pt-6 flex flex-col md:flex-row justify-between items-center text-gray-600 text-sm">
+      <p>© 2025 Airbnb, Inc. · <a href="#" class="hover:underline">Privacy</a> · <a href="#" class="hover:underline">Terms</a> · <a href="#" class="hover:underline">Sitemap</a></p>
+      
+      <!-- Social Icons -->
+      <div class="flex space-x-5 mt-4 md:mt-0">
+        <a href="#" class="hover:scale-110 transition transform">
+          <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" class="w-5 h-5" alt="Facebook">
+        </a>
+        <a href="#" class="hover:scale-110 transition transform">
+          <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" class="w-5 h-5" alt="Twitter">
+        </a>
+        <a href="#" class="hover:scale-110 transition transform">
+          <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" class="w-5 h-5" alt="Instagram">
+        </a>
+      </div>
+    </div>
+
+  </div>
+</footer>
+
   </body>
 
   </html>
