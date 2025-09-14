@@ -1,4 +1,5 @@
-<header class="bg-white shadow-md">
+<!-- Navbar with Dark/Light Mode Toggle -->
+<header class="bg-white shadow-md dark:bg-gray-900 transition-colors duration-300">
   <nav class="container mx-auto flex justify-between items-center px-6 py-4">
     
     <!-- Brand -->
@@ -8,27 +9,30 @@
     </a>
 
     <!-- Desktop Menu -->
-    <ul class="hidden md:flex items-center space-x-6 text-sm font-medium">
+    <ul class="flex items-center space-x-6 text-sm font-medium">
       <% if (isloggedIn) { %>
         <% if (userType === 'guest') { %>
           <li>
             <a href="/homes"
               class="px-3 py-2 rounded-lg transition 
-              <%= currentPage === 'Home' ? 'bg-[#FF385C] text-white' : 'text-gray-700 hover:bg-gray-100' %>">
+              <%= currentPage === 'Home' ? 'bg-[#FF385C] text-white' : 
+              'text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800' %>">
               Home-list
             </a>
           </li>
           <li>
             <a href="/favourites"
               class="px-3 py-2 rounded-lg transition 
-              <%= currentPage === 'favourite' ? 'bg-[#FF385C] text-white' : 'text-gray-700 hover:bg-gray-100' %>">
+              <%= currentPage === 'favourite' ? 'bg-[#FF385C] text-white' : 
+              'text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800' %>">
               Favourite
             </a>
           </li>
           <li>
             <a href="/bookings"
               class="px-3 py-2 rounded-lg transition 
-              <%= currentPage === 'bookings' ? 'bg-[#FF385C] text-white' : 'text-gray-700 hover:bg-gray-100' %>">
+              <%= currentPage === 'bookings' ? 'bg-[#FF385C] text-white' : 
+              'text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800' %>">
               Booking
             </a>
           </li>
@@ -36,14 +40,16 @@
           <li>
             <a href="/host/Homeslist"
               class="px-3 py-2 rounded-lg transition 
-              <%= currentPage === 'hostHome' ? 'bg-[#FF385C] text-white' : 'text-gray-700 hover:bg-gray-100' %>">
+              <%= currentPage === 'hostHome' ? 'bg-[#FF385C] text-white' : 
+              'text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800' %>">
               Host Homes List
             </a>
           </li>
           <li>
             <a href="/host/add-home"
               class="px-3 py-2 rounded-lg transition 
-              <%= currentPage === 'addHome' ? 'bg-[#FF385C] text-white' : 'text-gray-700 hover:bg-gray-100' %>">
+              <%= currentPage === 'addHome' ? 'bg-[#FF385C] text-white' : 
+              'text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800' %>">
               Add Home
             </a>
           </li>
@@ -51,17 +57,29 @@
       <% } %>
 
       <% if (!isloggedIn) { %>
+
+        <!-- Theme Toggle Button -->
+      <li>
+        <button id="theme-toggle" class="flex items-center space-x-2 p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition">
+          <span id="theme-icon">🌞</span>
+          <span id="toggle" class="text-gray-700 dark:text-gray-200"></span>
+        </button>
+      </li>
+
+
         <li>
           <a href="/login"
             class="px-3 py-2 rounded-lg transition 
-            <%= currentPage === 'login' ? 'bg-[#FF385C] text-white' : 'text-gray-700 hover:bg-gray-100' %>">
+            <%= currentPage === 'login' ? 'bg-[#FF385C] text-white' : 
+            'text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800' %>">
             Login
           </a>
         </li>
         <li>
           <a href="/Signup"
             class="px-3 py-2 rounded-lg transition 
-            <%= currentPage === 'signup' ? 'bg-[#FF385C] text-white' : 'text-gray-700 hover:bg-gray-100' %>">
+            <%= currentPage === 'signup' ? 'bg-[#FF385C] text-white' : 
+            'text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800' %>">
             SignUp
           </a>
         </li>
@@ -69,49 +87,51 @@
         <li>
           <a href="/logout"
             class="px-3 py-2 rounded-lg transition 
-            <%= currentPage === 'logout' ? 'bg-[#FF385C] text-white' : 'text-gray-700 hover:bg-gray-100' %>">
+            <%= currentPage === 'logout' ? 'bg-[#FF385C] text-white' : 
+            'text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800' %>">
             Logout
           </a>
         </li>
       <% } %>
+
+      
     </ul>
-
-    <!-- Mobile Hamburger -->
-    <button id="menu-toggle" class="md:hidden flex flex-col space-y-1">
-      <span class="w-6 h-0.5 bg-gray-800"></span>
-      <span class="w-6 h-0.5 bg-gray-800"></span>
-      <span class="w-6 h-0.5 bg-gray-800"></span>
-    </button>
   </nav>
-
-  <!-- Mobile Menu -->
-  <div id="mobile-menu" class="hidden md:hidden bg-white border-t px-6 py-4 space-y-3 text-sm font-medium">
-    <% if (isloggedIn) { %>
-      <% if (userType === 'guest') { %>
-        <a href="/homes" class="block px-3 py-2 rounded-lg <%= currentPage === 'Home' ? 'bg-[#FF385C] text-white' : 'text-gray-700 hover:bg-gray-100' %>">Home-list</a>
-        <a href="/favourites" class="block px-3 py-2 rounded-lg <%= currentPage === 'favourite' ? 'bg-[#FF385C] text-white' : 'text-gray-700 hover:bg-gray-100' %>">Favourite</a>
-        <a href="/bookings" class="block px-3 py-2 rounded-lg <%= currentPage === 'bookings' ? 'bg-[#FF385C] text-white' : 'text-gray-700 hover:bg-gray-100' %>">Booking</a>
-      <% } else { %>
-        <a href="/host/Homeslist" class="block px-3 py-2 rounded-lg <%= currentPage === 'hostHome' ? 'bg-[#FF385C] text-white' : 'text-gray-700 hover:bg-gray-100' %>">Host Homes List</a>
-        <a href="/host/add-home" class="block px-3 py-2 rounded-lg <%= currentPage === 'addHome' ? 'bg-[#FF385C] text-white' : 'text-gray-700 hover:bg-gray-100' %>">Add Home</a>
-      <% } %>
-    <% } %>
-
-    <% if (!isloggedIn) { %>
-      <a href="/login" class="block px-3 py-2 rounded-lg <%= currentPage === 'login' ? 'bg-[#FF385C] text-white' : 'text-gray-700 hover:bg-gray-100' %>">Login</a>
-      <a href="/Signup" class="block px-3 py-2 rounded-lg <%= currentPage === 'signup' ? 'bg-[#FF385C] text-white' : 'text-gray-700 hover:bg-gray-100' %>">SignUp</a>
-    <% } else { %>
-      <a href="/logout" class="block px-3 py-2 rounded-lg <%= currentPage === 'logout' ? 'bg-[#FF385C] text-white' : 'text-gray-700 hover:bg-gray-100' %>">Logout</a>
-    <% } %>
-  </div>
 </header>
 
 <script>
-  // Mobile Menu Toggle
-  const menuToggle = document.getElementById("menu-toggle");
-  const mobileMenu = document.getElementById("mobile-menu");
+  const themeToggle = document.getElementById("theme-toggle");
+  const themeIcon = document.getElementById("theme-icon");
+  const toggleName = document.getElementById("toggle");
 
-  menuToggle.addEventListener("click", () => {
-    mobileMenu.classList.toggle("hidden");
+  function setTheme(isDark) {
+    if (isDark) {
+      document.documentElement.classList.add("dark");
+      themeIcon.textContent = "🌙";
+      toggleName.innerText = "Dark Theme";
+      localStorage.setItem("theme", "dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+      themeIcon.textContent = "🌞";
+      toggleName.innerText = "Light Theme";
+      localStorage.setItem("theme", "light");
+    }
+  }
+
+  // Load stored theme or system preference
+  document.addEventListener("DOMContentLoaded", () => {
+    const storedTheme = localStorage.getItem("theme");
+    if (storedTheme) {
+      setTheme(storedTheme === "dark");
+    } else {
+      const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+      setTheme(prefersDark);
+    }
+  });
+
+  // Toggle theme on button click
+  themeToggle.addEventListener("click", () => {
+    const isDark = document.documentElement.classList.contains("dark");
+    setTheme(!isDark);
   });
 </script>
