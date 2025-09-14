@@ -1,4 +1,5 @@
 const Home = require('../models/home');
+const User = require('../models/user');
 const fs = require('fs');
 
 
@@ -10,7 +11,7 @@ exports.getAddhome = (req, res, next) => {
     editing: false,
     isloggedIn: req.session.isloggedIn || false, 
     user: req.session.user || null, 
-    userType: req.session.user ? req.session.user.userType : null
+    userType: req.session.user ? req.session.user.userType : null 
   });
 }
 
@@ -34,7 +35,7 @@ exports.getEditHomes = (req, res, next) => {
       editing: editing,
       isloggedIn: req.session.isloggedIn || false, 
       user: req.session.user || null, 
-      userType: req.session.user ? req.session.user.userType : null
+      userType: req.session.user ? req.session.user.userType : null 
     });
   });
 };
@@ -42,52 +43,75 @@ exports.getEditHomes = (req, res, next) => {
 
 
 
-exports.postAddhome = (req, res, next) => {
-  console.log('Home Registration successful for:', req.body);
+exports.postAddhome = async (req, res, next) => {
+  try {
+    console.log('Home Registration successful for:', req.body);
 
-  const { houseName, price, location, rating, description } = req.body;
-  console.log(req.file);
-  if(!req.file){
-    console.log("No image Provided");
-    // return res.redirect('/host/add-home');
-    return res.status(422).send("No image provided");
-  }
+    if (!req.session.user) {
+      return res.redirect('/login');
+    }
 
-  const photo = req.file.path;
+    const userId = req.session.user._id;
+    const user = await User.findById(userId);
 
-  const home = new Home({
-     houseName, 
-     price, 
-     location, 
-     rating, 
-     photo, 
-     description
-     });
-  
-  home.save().then(() => {
+    if (!user) {
+      return res.status(404).send('User not found');
+    }
+
+    const { houseName, price, location, rating, description } = req.body;
+
+    if (!req.file) {
+      console.log("No image provided");
+      return res.status(422).send("No image provided");
+    }
+
+    const photo = req.file.path;
+
+    const home = new Home({
+      houseName,
+      price,
+      location,
+      rating,
+      photo,
+      description,
+      host: userId  // Store host ID in the home
+    });
+
+    const savedHome = await home.save();
+
+    // ✅ Use the correct field 'host', not 'hosthomelist'
+    if (!user.host.includes(savedHome._id)) {
+      user.host.push(savedHome._id);
+      await user.save();
+    }
+
     console.log('Home saved successfully');
-  }).catch(err => {
-    console.error('Error saving home:', err);
-  });
-  res.redirect('/host/Homeslist');
-}
+    res.redirect('/host/Homeslist');
+  } catch (err) {
+    console.error('Error adding home:', err);
+    res.status(500).send('Server error');
+  }
+};
 
 
 
-exports.getHostHomeslist = (req, res, next) => {
 
-  Home.find().then(registeredHomes => {
+exports.getHostHomeslist = async (req, res, next) => {
+  const userId = req.session.user._id;
+  const user = await User.findById(userId).populate('host');
+  console.log("user : ",user);
+
     res.render('host/host-home-list', { 
-      registeredHomes: registeredHomes, 
+      registeredHomes: user.host, 
       pageTitle: 'Host-Home', currentPage: 'hostHome', 
       isloggedIn: req.session.isloggedIn || false, 
       user: req.session.user || null, 
       userType: req.session.user ? req.session.user.userType : null 
     });
-  });
 
   // console.log(registeredHomes);
 }
+
 
 
 
@@ -124,8 +148,14 @@ exports.postEditHomes = (req, res, next) => {
   });
 }
 
-exports.postDeleteHome = (req, res, next) => {
+exports.postDeleteHome = async(req, res, next) => {
   const homeId = req.params.homeid;
+  const userId = req.session.user._id;
+    const user = await User.findById(userId);
+    if (user.host.includes(homeId)){
+      user.host = user.host.filter(fav => fav != homeId);
+      await user.save();
+    }
   console.log('Deleting home with ID:', homeId);
 
   Home.findByIdAndDelete(homeId).then(() => {
@@ -136,11 +166,3 @@ exports.postDeleteHome = (req, res, next) => {
     res.redirect('/host/Homeslist');
   });
 }
-
-
-
-
-
-
-
-

@@ -4,14 +4,11 @@ const bcrypt = require("bcryptjs");
 
 
 exports.getLogin = (req, res, next) => {
-    // const userType = req.session.user ? req.session.user.userType : null;
-    // console.log("userType:", userType);
-
     res.render("auth/login", {
         pageTitle: "Login",
         currentPage: "login",
         errors: [],
-        isloggedIn: req.session.isloggedIn || false,
+        isloggedIn: false,
         oldInput: { email: "" },
         user: {},
         // user: req.session.user || {},
@@ -160,11 +157,20 @@ exports.postLogin = async (req, res, next) => {
     res.redirect("/");
 }
 
-exports.postLogout = (req, res, next) => {
-    req.session.destroy(() => {
-        res.redirect("/login");
-        //req.isloggedIn = false;
+exports.getLogout = (req, res, next) => {
+    // Render logout page if you want a page before destroying session
+    res.render('auth/logout', {
+        pageTitle: "logout",
+        currentPage: "logout",
+        isloggedIn: true,
+        userType: req.session.userType || 'guest'
     });
+};
 
-}
+exports.postLogout = (req, res, next) => {
+    req.session.destroy(() => {   
+    res.redirect("/login");
+  })
+};
+
 

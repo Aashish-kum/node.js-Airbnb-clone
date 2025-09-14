@@ -1,0 +1,108 @@
+<%- include('../../partials/head') %>
+</head>
+<body class="bg-gray-50">
+
+  <main class="container mx-auto mt-10 px-6 sm:px-8">
+    <section class="bg-white shadow-xl rounded-3xl p-8 sm:p-12 space-y-12">
+
+      <!-- Title -->
+      <div class="text-center space-y-4">
+        <h1 class="text-4xl sm:text-5xl font-extrabold text-indigo-700">Disability Support</h1>
+        <p class="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">
+          At <span class="font-semibold text-indigo-600">Airbnb Clone</span>, we’re committed to creating an inclusive 
+          community where travelers and hosts with disabilities feel safe, welcome, and supported.
+        </p>
+      </div>
+
+      <!-- Our Commitment -->
+      <div class="space-y-4 border-t pt-8">
+        <h2 class="text-2xl font-bold text-gray-800 flex items-center gap-2">
+          <i class="fa-solid fa-heart text-indigo-600"></i> Our Commitment
+        </h2>
+        <p class="text-gray-700 leading-relaxed">
+          We believe everyone deserves the opportunity to travel and host with confidence.  
+          Our platform promotes accessibility by empowering hosts to share details about their property’s 
+          accessibility features and helping guests find stays that meet their needs.
+        </p>
+      </div>
+
+      <!-- Accessibility Features -->
+      <div class="space-y-4 border-t pt-8">
+        <h2 class="text-2xl font-bold text-gray-800 flex items-center gap-2">
+          <i class="fa-solid fa-wheelchair text-indigo-600"></i> Accessibility Features
+        </h2>
+        <ul class="list-disc list-inside text-gray-700 leading-relaxed space-y-2">
+          <li>Filter properties with accessibility-friendly amenities.</li>
+          <li>Hosts can add details such as step-free entrances, wide doorways, or accessible bathrooms.</li>
+          <li>Guests can review accessibility information before booking.</li>
+        </ul>
+      </div>
+
+      <!-- Support for Guests -->
+      <div class="space-y-4 border-t pt-8">
+        <h2 class="text-2xl font-bold text-gray-800 flex items-center gap-2">
+          <i class="fa-solid fa-user text-indigo-600"></i> Support for Guests
+        </h2>
+        <p class="text-gray-700 leading-relaxed">
+          If you have specific needs, our support team is here to help.  
+          From finding accessible stays to resolving issues during your trip, we provide 
+          dedicated resources for guests with disabilities.
+        </p>
+      </div>
+
+      <!-- Support for Hosts -->
+      <div class="space-y-4 border-t pt-8">
+        <h2 class="text-2xl font-bold text-gray-800 flex items-center gap-2">
+          <i class="fa-solid fa-house text-indigo-600"></i> Support for Hosts
+        </h2>
+        <p class="text-gray-700 leading-relaxed">
+          Hosts are encouraged to describe accessibility features clearly.  
+          By providing accurate details, you help guests make informed choices and foster trust 
+          within our community.
+        </p>
+      </div>
+
+      <!-- Report an Issue -->
+      <div class="space-y-4 border-t pt-8">
+        <h2 class="text-2xl font-bold text-gray-800 flex items-center gap-2">
+          <i class="fa-solid fa-exclamation-circle text-red-500"></i> Report an Accessibility Issue
+        </h2>
+        <form action="/report-disability-support" method="POST" class="space-y-4">
+          <div>
+            <label class="block text-gray-700 font-medium mb-1">Name</label>
+            <input type="text" name="name" required class="w-full border rounded-lg px-4 py-2 focus:ring-2 focus:ring-indigo-500">
+          </div>
+          <div>
+            <label class="block text-gray-700 font-medium mb-1">Email</label>
+            <input type="email" name="email" required class="w-full border rounded-lg px-4 py-2 focus:ring-2 focus:ring-indigo-500">
+          </div>
+          <div>
+            <label class="block text-gray-700 font-medium mb-1">Describe the issue</label>
+            <textarea name="message" rows="4" required class="w-full border rounded-lg px-4 py-2 focus:ring-2 focus:ring-indigo-500"></textarea>
+          </div>
+          <button type="submit" class="bg-indigo-600 text-white px-6 py-2 rounded-lg shadow hover:bg-indigo-700 transition">
+            Submit Report
+          </button>
+        </form>
+      </div>
+
+      <!-- CTA -->
+      <div class="bg-indigo-50 border border-indigo-200 p-8 rounded-2xl text-center space-y-4">
+        <h3 class="text-xl font-semibold text-indigo-700">Need more help?</h3>
+        <div class="flex flex-col sm:flex-row justify-center gap-4">
+          <a href="/help" 
+             class="bg-gray-700 text-white px-6 py-3 rounded-xl shadow hover:bg-gray-900 transition">
+            Visit Help Center
+          </a>
+          <a href="/" 
+             class="bg-indigo-600 text-white px-6 py-3 rounded-xl shadow hover:bg-indigo-700 transition">
+            ← Back to Home
+          </a>
+        </div>
+      </div>
+
+    </section>
+  </main>
+
+</body>
+</html>

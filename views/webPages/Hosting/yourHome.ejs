@@ -1,0 +1,80 @@
+<%- include('../../partials/head') %>
+</head>
+<body class="bg-gray-50">
+
+  <main class="container mx-auto mt-10 px-6 sm:px-8">
+    <section class="bg-white shadow-xl rounded-3xl p-8 sm:p-12 space-y-12">
+
+      <!-- Hero -->
+      <div class="text-center space-y-6">
+        <i class="fa-solid fa-house-user text-indigo-600 text-5xl"></i>
+        <h1 class="text-4xl sm:text-5xl font-extrabold text-gray-900">
+          Airbnb Your Home
+        </h1>
+        <p class="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">
+          Earn money by sharing your space. Become a host and open the door to new opportunities, 
+          connections, and experiences.
+        </p>
+      </div>
+
+      <!-- Benefits -->
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 text-center">
+        <div class="p-6 bg-indigo-50 rounded-2xl shadow hover:shadow-lg transition">
+          <i class="fa-solid fa-money-bill-wave text-3xl text-indigo-600 mb-4"></i>
+          <h3 class="font-bold text-lg text-gray-900">Extra Income</h3>
+          <p class="text-gray-600 text-sm mt-2">
+            Turn your space into earnings by welcoming guests from around the world.
+          </p>
+        </div>
+
+        <div class="p-6 bg-indigo-50 rounded-2xl shadow hover:shadow-lg transition">
+          <i class="fa-solid fa-globe text-3xl text-indigo-600 mb-4"></i>
+          <h3 class="font-bold text-lg text-gray-900">Global Reach</h3>
+          <p class="text-gray-600 text-sm mt-2">
+            Connect with millions of travelers who are looking for unique stays like yours.
+          </p>
+        </div>
+
+        <div class="p-6 bg-indigo-50 rounded-2xl shadow hover:shadow-lg transition">
+          <i class="fa-solid fa-shield-heart text-3xl text-indigo-600 mb-4"></i>
+          <h3 class="font-bold text-lg text-gray-900">AirCover Protection</h3>
+          <p class="text-gray-600 text-sm mt-2">
+            Hosts are backed with comprehensive protection, including damage and liability coverage.
+          </p>
+        </div>
+      </div>
+
+      <!-- Steps -->
+      <div class="space-y-6 border-t pt-10">
+        <h2 class="text-2xl font-bold text-gray-800 flex items-center gap-2">
+          <i class="fa-solid fa-list-ol text-indigo-600"></i> How to Get Started
+        </h2>
+        <ol class="list-decimal list-inside space-y-3 text-gray-700">
+          <li>Sign up and create your Airbnb host account.</li>
+          <li>List your space with photos, details, and pricing.</li>
+          <li>Set your availability and booking preferences.</li>
+          <li>Welcome guests and start earning income.</li>
+        </ol>
+      </div>
+
+      <!-- CTA -->
+      <div class="bg-indigo-50 border border-indigo-200 p-8 rounded-2xl text-center space-y-6">
+        <h3 class="text-2xl font-semibold text-indigo-700">Ready to become a host?</h3>
+        <p class="text-gray-600">List your property today and join thousands of successful hosts worldwide.</p>
+        <div class="flex flex-col sm:flex-row justify-center gap-4">
+          <a href="/signup" 
+             class="bg-indigo-600 text-white px-8 py-3 rounded-xl shadow hover:bg-indigo-700 transition text-lg">
+            Start Hosting
+          </a>
+          <a href="/" 
+             class="bg-gray-700 text-white px-8 py-3 rounded-xl shadow hover:bg-gray-900 transition text-lg">
+            ← Back to Home
+          </a>
+        </div>
+      </div>
+
+    </section>
+  </main>
+
+</body>
+</html>

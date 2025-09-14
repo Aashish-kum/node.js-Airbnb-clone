@@ -5,7 +5,6 @@ const User = require('../models/user');
 
 exports.getIndex = (req, res, next) => {
   console.log("Session Object:", req.session);
-  console.log("userType is : ",req.session.user.userType);
   Home.find().then(registeredHomes => {
     res.render('store/index', { 
       registeredHomes: registeredHomes, 
@@ -123,7 +122,6 @@ exports.getHomeById = (req, res, next) => {
 
   console.log(homeId);
 }
-
 
 
 

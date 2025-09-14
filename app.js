@@ -14,6 +14,7 @@ const DB_PORT = process.env.DB_PORT;
 const storeRouter = require("./routes/storeRouter")
 const hostRouter = require("./routes/hostRouter")
 const authRouter = require("./routes/authRouter")
+const webPageRouter = require("./routes/webPageRouter")
 const rootDir = require("./utils/pathUtil");
 
 const errorController = require("./controllers/error");
@@ -99,6 +100,7 @@ app.use("/host", (req, res, next) => {
 });
 app.use("/host", hostRouter);
 app.use(authRouter);
+app.use(webPageRouter);
 
 
 

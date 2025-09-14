@@ -1,0 +1,99 @@
+<%- include('../../partials/head') %>
+</head>
+<body class="bg-gray-50">
+
+  <main class="container mx-auto mt-10 px-6 sm:px-8">
+    <section class="bg-white shadow-xl rounded-3xl p-8 sm:p-12 space-y-12">
+
+      <!-- Hero -->
+      <div class="text-center space-y-6">
+        <i class="fa-solid fa-users text-indigo-600 text-5xl"></i>
+        <h1 class="text-4xl sm:text-5xl font-extrabold text-gray-900">
+          Community Forum
+        </h1>
+        <p class="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">
+          Connect with other hosts and guests, share experiences, ask questions, and discover 
+          valuable tips to make your hosting journey successful.
+        </p>
+      </div>
+
+      <!-- Categories -->
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        
+        <!-- Category 1 -->
+        <div class="p-6 bg-indigo-50 rounded-2xl shadow hover:shadow-lg transition">
+          <h2 class="text-xl font-bold text-indigo-700 mb-3 flex items-center gap-2">
+            <i class="fa-solid fa-lightbulb"></i> Hosting Tips
+          </h2>
+          <p class="text-gray-700 text-sm leading-relaxed">
+            Learn how to attract more guests, improve reviews, and create memorable stays. 
+            Share your hosting hacks with the community.
+          </p>
+          <a href="#" class="text-indigo-600 font-medium hover:underline mt-3 inline-block">Join Discussions →</a>
+        </div>
+
+        <!-- Category 2 -->
+        <div class="p-6 bg-indigo-50 rounded-2xl shadow hover:shadow-lg transition">
+          <h2 class="text-xl font-bold text-indigo-700 mb-3 flex items-center gap-2">
+            <i class="fa-solid fa-comments"></i> Guest Experiences
+          </h2>
+          <p class="text-gray-700 text-sm leading-relaxed">
+            Share your travel stories or learn from other guests about what makes a great stay. 
+            Build trust through shared experiences.
+          </p>
+          <a href="#" class="text-indigo-600 font-medium hover:underline mt-3 inline-block">Share Stories →</a>
+        </div>
+
+        <!-- Category 3 -->
+        <div class="p-6 bg-indigo-50 rounded-2xl shadow hover:shadow-lg transition">
+          <h2 class="text-xl font-bold text-indigo-700 mb-3 flex items-center gap-2">
+            <i class="fa-solid fa-handshake"></i> Community Support
+          </h2>
+          <p class="text-gray-700 text-sm leading-relaxed">
+            Connect with other members for advice, solutions, and encouragement. 
+            A place where hosts and guests support each other.
+          </p>
+          <a href="#" class="text-indigo-600 font-medium hover:underline mt-3 inline-block">Get Support →</a>
+        </div>
+      </div>
+
+      <!-- Popular Discussions -->
+      <div class="border-t pt-10">
+        <h2 class="text-2xl font-bold text-gray-800 mb-6">🔥 Popular Discussions</h2>
+        <ul class="space-y-4 text-gray-700">
+          <li class="border-b pb-4">
+            <a href="#" class="font-semibold text-indigo-600 hover:underline">Best practices for welcoming first-time guests</a>
+            <p class="text-sm text-gray-600">Started by <strong>Host_Ravi</strong> · 45 replies</p>
+          </li>
+          <li class="border-b pb-4">
+            <a href="#" class="font-semibold text-indigo-600 hover:underline">How do you handle last-minute cancellations?</a>
+            <p class="text-sm text-gray-600">Started by <strong>Travel_Buddy</strong> · 28 replies</p>
+          </li>
+          <li>
+            <a href="#" class="font-semibold text-indigo-600 hover:underline">Ideas to make guests feel extra welcome 🌟</a>
+            <p class="text-sm text-gray-600">Started by <strong>Anita_Host</strong> · 33 replies</p>
+          </li>
+        </ul>
+      </div>
+
+      <!-- CTA -->
+      <div class="bg-indigo-50 border border-indigo-200 p-8 rounded-2xl text-center space-y-6">
+        <h3 class="text-2xl font-semibold text-indigo-700">Join the Conversation Today</h3>
+        <p class="text-gray-600">Ask questions, share experiences, and grow together with the Airbnb community.</p>
+        <div class="flex flex-col sm:flex-row justify-center gap-4">
+          <a href="/signup" 
+             class="bg-indigo-600 text-white px-8 py-3 rounded-xl shadow hover:bg-indigo-700 transition text-lg">
+            Create an Account
+          </a>
+          <a href="/" 
+             class="bg-gray-700 text-white px-8 py-3 rounded-xl shadow hover:bg-gray-900 transition text-lg">
+            ← Back to Home
+          </a>
+        </div>
+      </div>
+
+    </section>
+  </main>
+
+</body>
+</html>
