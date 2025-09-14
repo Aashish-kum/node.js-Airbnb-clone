@@ -1,7 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title><%= pageTitle %></title>
-    <link rel="stylesheet" href="/output.css" />
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= pageTitle %> | Airbnb Clone</title>
+
+  <!-- Tailwind -->
+  <link rel="stylesheet" href="/output.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class' // Use class strategy
+    }
+  </script>
+
+  <!-- ✅ Apply stored theme ASAP to prevent flash -->
+  <script>
+    const storedTheme = localStorage.getItem("theme");
+    if (storedTheme === "dark") {
+      document.documentElement.classList.add("dark");
+    } else if (storedTheme === "light") {
+      document.documentElement.classList.remove("dark");
+    } else {
+      // Default to dark
+      document.documentElement.classList.add("dark");
+    }
+
+  <!-- ✅ Theme Toggle Script -->
+ 
+    const htmlEl = document.documentElement;
+    const themeToggleDesktop = document.getElementById("theme-toggle-btn");
+    const themeToggleMobile = document.getElementById("theme-toggle-mobile");
+
+    function toggleTheme() {
+      htmlEl.classList.toggle("dark");
+      localStorage.setItem("theme", htmlEl.classList.contains("dark") ? "dark" : "light");
+    }
+
+    if (themeToggleDesktop) themeToggleDesktop.addEventListener("click", toggleTheme);
+    if (themeToggleMobile) themeToggleMobile.addEventListener("click", toggleTheme);
+  </script>
+
