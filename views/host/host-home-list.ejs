@@ -1,26 +1,26 @@
 <%- include('../partials/head') %>
 </head>
 
-<body class="bg-gray-50">
+<body class="bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-300">
   <%- include('../partials/nav') %>
 
   <% if (registeredHomes && registeredHomes.length > 0) { %>
     <main class="container mx-auto mt-8 px-4">
-      <div class="bg-white rounded-xl shadow-lg p-6 sm:p-8 max-w-6xl mx-auto">
+      <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-6 sm:p-8 max-w-6xl mx-auto transition-colors duration-300 animate-fadeInUp">
         
         <!-- Title -->
-        <h2 class="text-2xl sm:text-3xl font-bold text-center text-[#FF385C] mb-8">
+        <h2 class="text-2xl sm:text-3xl font-bold text-center text-[#FF385C] dark:text-pink-400 mb-8">
           Your Registered Homes
         </h2>
 
         <!-- Homes Grid -->
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           <% registeredHomes.forEach(home => { %>
-            <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300 flex flex-col">
-              
+            <div class="bg-white dark:bg-gray-700 rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300 flex flex-col">
+
               <!-- Image -->
               <% if (isloggedIn) { %>
-                <a href="/host/editHomes/<%= home._id %>?editing=true">
+                <a href="/host/editHomes/<%= home._id %>?editing=true" class="focus:outline-none focus:ring-2 focus:ring-blue-300 rounded-lg">
               <% } %>
                   <img src="<%= home.photo %>" 
                        alt="<%= home.houseName %>" 
@@ -29,17 +29,17 @@
 
               <!-- Content -->
               <div class="p-4 flex flex-col flex-grow">
-                <h3 class="text-lg sm:text-xl font-semibold text-gray-800 mb-1">
+                <h3 class="text-lg sm:text-xl font-semibold mb-1 text-gray-800 dark:text-gray-100">
                   <%= home.houseName %>
                 </h3>
-                <p class="text-gray-600 text-sm mb-3">
+                <p class="text-gray-600 dark:text-gray-300 text-sm mb-3">
                   <i class="fas fa-map-marker-alt mr-2"></i>
                   <%= home.location %>
                 </p>
 
                 <!-- Price + Rating -->
                 <div class="flex justify-between items-center mb-4">
-                  <span class="text-base sm:text-lg font-bold text-red-500">
+                  <span class="text-base sm:text-lg font-bold text-red-500 dark:text-red-400">
                     ₹ <%= home.price %> / night
                   </span>
                   <div class="flex items-center text-sm">
@@ -54,7 +54,7 @@
                         c-.887-.76-.415-2.212.749-2.305l5.404-.433 
                         2.082-5.006z" clip-rule="evenodd"/>
                     </svg>
-                    <span class="text-gray-700"><%= home.rating %></span>
+                    <span class="text-gray-700 dark:text-gray-200"><%= home.rating %></span>
                   </div>
                 </div>
 
@@ -64,8 +64,8 @@
                     <!-- Edit -->
                     <a href="/host/editHomes/<%= home._id %>?editing=true" 
                        class="flex-1 inline-flex items-center justify-center px-4 py-2 rounded-full 
-                              bg-blue-600 text-white text-sm font-medium shadow-sm 
-                              hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-300 transition">
+                              bg-blue-600 dark:bg-blue-700 text-white text-sm font-medium shadow-sm 
+                              hover:bg-blue-700 dark:hover:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-blue-300 transition">
                       Edit
                     </a>
                     
@@ -73,8 +73,8 @@
                     <form action="/host/Delete-home/<%= home._id %>" method="POST" class="flex-1">
                       <button type="submit" 
                               class="w-full inline-flex items-center justify-center px-4 py-2 rounded-full 
-                                     bg-red-500 text-white text-sm font-medium shadow-sm 
-                                     hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-300 transition">
+                                     bg-red-500 dark:bg-red-600 text-white text-sm font-medium shadow-sm 
+                                     hover:bg-red-600 dark:hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-300 transition">
                         Delete
                       </button>
                     </form>
@@ -89,21 +89,36 @@
   <% } else { %>
     <!-- Empty State -->
     <div class="container mx-auto max-w-2xl mt-16 px-4">
-      <div class="flex flex-col items-center justify-center py-12 bg-gray-50 rounded-xl shadow-inner">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-gray-400 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <div class="flex flex-col items-center justify-center py-12 bg-gray-50 dark:bg-gray-800 rounded-xl shadow-inner transition-colors duration-300">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-gray-400 dark:text-gray-300 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
             d="M9 13h6m-3-3v6m9-4a9 9 0 11-18 0 9 9 0 0118 0z"/>
         </svg>
-        <p class="text-gray-600 text-lg font-medium mb-3">
+        <p class="text-gray-600 dark:text-gray-200 text-lg font-medium mb-3">
           You haven’t added any homes yet.
         </p>
         <a href="/host/add-home"
-           class="inline-block px-6 py-2 bg-red-500 text-white rounded-full shadow-md 
-                  hover:bg-red-600 transition">
+           class="inline-block px-6 py-2 bg-red-500 dark:bg-red-600 text-white rounded-full shadow-md 
+                  hover:bg-red-600 dark:hover:bg-red-700 transition">
           Add Your First Home
         </a>
       </div>
     </div>
   <% } %>
+  <style>
+      @keyframes fadeInUp {
+      0% {
+        opacity: 0;
+        transform: translateY(40px) scale(0.9);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+    .animate-fadeInUp {
+      animation: fadeInUp 0.2s ease-out forwards;
+    }
+  </style>
 </body>
 </html>
