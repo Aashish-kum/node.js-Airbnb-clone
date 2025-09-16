@@ -1,30 +1,29 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <%- include('../partials/head') %>
+<%- include('../partials/head') %>
   </head>
-  <body>
+  <body class="bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
+    <!-- NAVBAR -->
     <%- include('../partials/nav') %>
 
+    <!-- MAIN LOGIN CARD -->
     <main class="flex min-h-screen items-center justify-center p-6">
       <div class="w-full max-w-md">
-        <!-- Header / brand -->
+        <!-- Header / Brand -->
         <div class="mb-6 flex items-center justify-center gap-2">
           <div class="h-8 w-8 rounded-full bg-[#FF385C]"></div>
           <span class="text-2xl font-bold tracking-tight text-[#FF385C]">airbnb</span>
         </div>
 
-        <!-- Card -->
-        <div class="rounded-2xl bg-white p-6 shadow-xl ring-1 ring-black/5">
-          <h1 class="mb-1 text-xl font-semibold">Welcome back</h1>
-          <p class="mb-6 text-sm text-neutral-600">Sign in to continue</p>
+        <!-- Login Card -->
+        <div class="rounded-2xl bg-white dark:bg-gray-800 p-6 shadow-xl ring-1 ring-black/5 dark:ring-white/10 transition-colors duration-300">
+          <h1 class="mb-1 text-xl font-semibold text-gray-900 dark:text-gray-100">Welcome back</h1>
+          <p class="mb-6 text-sm text-gray-600 dark:text-gray-300">Sign in to continue</p>
 
           <form class="space-y-4" action="/login" method="POST" novalidate>
             <%- include('../partials/errorAuth.ejs') %>
 
-            <!-- Email or phone -->
+            <!-- Email or Phone -->
             <div>
-              <label for="identifier" class="mb-1 block text-sm font-medium">Email or phone</label>
+              <label for="identifier" class="mb-1 block text-sm font-medium text-gray-700 dark:text-gray-300">Email or phone</label>
               <input
                 id="identifier"
                 name="email"
@@ -33,7 +32,7 @@
                 inputmode="email"
                 autocomplete="email"
                 required
-                class="focus-ring w-full rounded-xl border border-neutral-300 bg-white px-3 py-2 text-sm shadow-sm placeholder:text-neutral-400"
+                class="focus-ring w-full rounded-xl border border-neutral-300 dark:border-gray-600 bg-white dark:bg-gray-700 px-3 py-2 text-sm text-gray-900 dark:text-gray-100 shadow-sm placeholder:text-neutral-400 dark:placeholder:text-gray-400 transition-colors duration-300"
                 placeholder="you@example.com"
               />
               <p id="idError" class="mt-1 hidden text-xs text-red-600">Please enter a valid email or phone number.</p>
@@ -42,7 +41,7 @@
             <!-- Password -->
             <div>
               <div class="flex items-center justify-between">
-                <label for="password" class="mb-1 block text-sm font-medium">Password</label>
+                <label for="password" class="mb-1 block text-sm font-medium text-gray-700 dark:text-gray-300">Password</label>
               </div>
               <div class="relative">
                 <input
@@ -52,11 +51,11 @@
                   autocomplete="current-password"
                   required
                   minlength="6"
-                  class="focus-ring w-full rounded-xl border border-neutral-300 bg-white px-3 py-2 pr-12 text-sm shadow-sm placeholder:text-neutral-400"
+                  class="focus-ring w-full rounded-xl border border-neutral-300 dark:border-gray-600 bg-white dark:bg-gray-700 px-3 py-2 pr-12 text-sm text-gray-900 dark:text-gray-100 shadow-sm placeholder:text-neutral-400 dark:placeholder:text-gray-400 transition-colors duration-300"
                   placeholder="••••••••"
                 />
                 <button type="button" id="togglePw"
-                  class="absolute inset-y-0 right-0 my-1 mr-1 rounded-lg px-3 text-xs font-medium text-neutral-700 hover:bg-neutral-100 focus-ring">
+                  class="absolute inset-y-0 right-0 my-1 mr-1 rounded-lg px-3 text-xs font-medium text-gray-700 dark:text-gray-200 hover:bg-neutral-100 dark:hover:bg-gray-600 focus-ring transition-colors duration-300">
                   Show
                 </button>
               </div>
@@ -66,34 +65,35 @@
             <!-- Submit -->
             <button
               type="submit"
-              value="Login"
               class="w-full rounded-xl bg-[#FF385C] px-4 py-2 text-sm font-semibold text-white shadow-md transition hover:brightness-95 focus-ring active:translate-y-px"
             >
               Continue
             </button>
 
             <!-- Divider -->
-            <div class="relative py-2 text-center text-sm text-neutral-500">
-              <span class="relative z-10 bg-white px-2">or</span>
-              <span class="absolute left-0 top-1/2 h-px w-full -translate-y-1/2 bg-neutral-200"></span>
+            <div class="relative py-2 text-center text-sm text-gray-500 dark:text-gray-400">
+              <span class="relative z-10 bg-white dark:bg-gray-800 px-2">or</span>
+              <span class="absolute left-0 top-1/2 h-px w-full -translate-y-1/2 bg-neutral-200 dark:bg-gray-600"></span>
             </div>
 
             <!-- Terms -->
-            <p class="mt-4 text-center text-[13px] leading-5 text-neutral-500">
+            <p class="mt-4 text-center text-[13px] leading-5 text-gray-500 dark:text-gray-400">
               By continuing, you agree to Airbnb’s <a href="#" class="underline">Terms</a> and acknowledge our <a href="#" class="underline">Privacy Policy</a>.
             </p>
           </form>
         </div>
 
         <!-- Footer -->
-        <p class="mt-6 text-center text-sm text-neutral-500">
+        <p class="mt-6 text-center text-sm text-gray-500 dark:text-gray-400">
           New to Airbnb?
-          <a href="/signup" class="font-medium text-neutral-700 underline underline-offset-2 hover:text-neutral-900">Create an account</a>
+          <a href="/signup" class="font-medium text-gray-700 dark:text-gray-200 underline underline-offset-2 hover:text-gray-900 dark:hover:text-white">Create an account</a>
         </p>
       </div>
     </main>
 
+    <!-- SCRIPTS -->
     <script>
+      // Password toggle
       const passwordInput = document.getElementById('password');
       const toggleButton = document.getElementById('togglePw');
 
@@ -101,6 +101,27 @@
         const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
         passwordInput.setAttribute('type', type);
         toggleButton.textContent = type === 'password' ? 'Show' : 'Hide';
+      });
+
+      // Theme toggle
+      const desktopBtn = document.getElementById('theme-toggle-btn');
+      function toggleTheme() {
+        const isDarkNow = document.documentElement.classList.toggle('dark');
+        localStorage.setItem('theme', isDarkNow ? 'dark' : 'light');
+        if (desktopBtn) desktopBtn.setAttribute('aria-pressed', isDarkNow ? 'true' : 'false');
+      }
+
+      if (desktopBtn) desktopBtn.addEventListener('click', toggleTheme);
+
+      document.addEventListener('DOMContentLoaded', () => {
+        const storedTheme = localStorage.getItem('theme');
+        if (storedTheme === 'dark') {
+          document.documentElement.classList.add('dark');
+          if (desktopBtn) desktopBtn.setAttribute('aria-pressed', 'true');
+        } else {
+          document.documentElement.classList.remove('dark');
+          if (desktopBtn) desktopBtn.setAttribute('aria-pressed', 'false');
+        }
       });
     </script>
   </body>
