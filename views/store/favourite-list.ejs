@@ -1,88 +1,100 @@
 <%- include('../partials/head') %>
 </head>
-<body class="bg-gray-50">
+<body class="bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-300">
   <%- include('../partials/nav') %>
 
   <% if (favouriteHomes && favouriteHomes.length > 0) { %>
+    <main class="container mx-auto bg-white dark:bg-gray-800 shadow-lg rounded-2xl p-6 sm:p-10 mt-8 sm:mt-12 max-w-7xl transition-colors duration-300 animate-fadeInUp">
+      <h2 class="text-2xl sm:text-3xl text-[#FF385C] font-bold text-center mb-8 sm:mb-10">
+        Your Favourite Homes
+      </h2>
 
-  <main class="container mx-auto bg-white shadow-lg rounded-2xl p-6 sm:p-10 mt-8 sm:mt-12 max-w-7xl">
-    <h2 class="text-2xl sm:text-3xl text-[#FF385C] font-bold text-center mb-8 sm:mb-10">
-      Your Favourite Homes
-    </h2>
-
-    <!-- Responsive Grid -->
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-      <% favouriteHomes.forEach(home => { %>
-        <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition duration-300 flex flex-col">
-          
-          <!-- Image -->
-          <div class="overflow-hidden">
-            <img src="<%= home.photo %>" alt="<%= home.houseName %>" 
-                 class="w-full h-52 object-cover transform hover:scale-105 transition duration-300">
-          </div>
-
-          <!-- Card Content -->
-          <div class="p-5 flex flex-col flex-grow">
-            <h3 class="text-lg sm:text-xl font-semibold text-gray-800 mb-2 truncate">
-              <%= home.houseName %>
-            </h3>
-            <p class="text-gray-600 flex items-center mb-3">
-              <i class="fas fa-map-marker-alt text-[#FF385C] mr-2"></i>
-              <span><%= home.location %></span>
-            </p>
-
-            <!-- Price & Rating -->
-            <div class="flex justify-between items-center mb-4">
-              <span class="text-base sm:text-lg font-bold text-[#FF385C]">
-                ₹<%= home.price %> / night
-              </span>
-              <div class="flex items-center">
-                <svg xmlns="http://www.w3.org/2000/svg" 
-                     viewBox="0 0 24 24" fill="currentColor" 
-                     class="w-5 h-5 text-yellow-400 mr-1">
-                  <path fill-rule="evenodd" d="M10.788 3.21c.448-1.077 
-                  1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 
-                  1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 
-                  1.136-.964 2.033-1.96 1.425L12 18.354 7.373 
-                  21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c
-                  -.887-.76-.415-2.212.749-2.305l5.404-.433 
-                  2.082-5.006z" clip-rule="evenodd"/>
-                </svg>
-                <span class="text-gray-700 text-sm"><%= home.rating %></span>
-              </div>
+      <!-- Responsive Grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <% favouriteHomes.forEach(home => { %>
+          <div class="bg-white dark:bg-gray-900 rounded-xl shadow-md hover:shadow-xl transition duration-300 flex flex-col">
+            
+            <!-- Image -->
+            <div class="overflow-hidden">
+              <img src="<%= home.photo %>" alt="<%= home.houseName %>" 
+                   class="w-full h-52 object-cover transform hover:scale-105 transition duration-300">
             </div>
 
-            <!-- Remove Button -->
-            <form action="/favourites/delete/<%= home._id %>" method="POST" class="mt-auto">
-              <button type="submit" 
-                class="w-full bg-[#FF385C] text-white py-2 rounded-lg text-sm sm:text-base font-medium hover:bg-red-600 transition duration-300">
-                Remove from Favourites
-              </button>
-            </form>
-          </div>
-        </div>
-      <% }) %>
-    </div>
-  </main>
- <% } else { %>
-  <div class="col-span-full flex flex-col items-center justify-center py-12 bg-gray-50 rounded-lg shadow-inner">
-    <svg xmlns="http://www.w3.org/2000/svg" 
-         class="h-12 w-12 text-red-400 mb-4" 
-         fill="none" viewBox="0 0 24 24" stroke="currentColor">
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-        d="M4.318 6.318a4.5 4.5 0 016.364 0L12 7.636l1.318-1.318a4.5 
-           4.5 0 116.364 6.364L12 21.364l-7.682-7.682a4.5 
-           4.5 0 010-6.364z" />
-    </svg>
-    <p class="text-gray-600 text-lg font-medium mb-2">
-      You haven’t added any favorites yet.
-    </p>
-    <a href="/homes" 
-       class="inline-block px-6 py-2 mt-2 bg-red-500 text-white rounded-full shadow-md hover:bg-red-600 transition">
-      Browse Homes
-    </a>
-  </div>
-<% } %>
+            <!-- Card Content -->
+            <div class="p-5 flex flex-col flex-grow">
+              <h3 class="text-lg sm:text-xl font-semibold text-gray-800 dark:text-gray-200 mb-2 truncate">
+                <%= home.houseName %>
+              </h3>
+              <p class="text-gray-600 dark:text-gray-400 flex items-center mb-3">
+                <i class="fas fa-map-marker-alt text-[#FF385C] mr-2"></i>
+                <span><%= home.location %></span>
+              </p>
 
+              <!-- Price & Rating -->
+              <div class="flex justify-between items-center mb-4">
+                <span class="text-base sm:text-lg font-bold text-[#FF385C]">
+                  ₹<%= home.price %> / night
+                </span>
+                <div class="flex items-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" 
+                       class="w-5 h-5 text-yellow-400 mr-1">
+                    <path fill-rule="evenodd" d="M10.788 3.21c.448-1.077 
+                    1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 
+                    1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 
+                    1.136-.964 2.033-1.96 1.425L12 18.354 7.373 
+                    21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c
+                    -.887-.76-.415-2.212.749-2.305l5.404-.433 
+                    2.082-5.006z" clip-rule="evenodd"/>
+                  </svg>
+                  <span class="text-gray-700 dark:text-gray-300 text-sm"><%= home.rating %></span>
+                </div>
+              </div>
+
+              <!-- Remove Button -->
+              <form action="/favourites/delete/<%= home._id %>" method="POST" class="mt-auto">
+                <button type="submit" 
+                  class="w-full bg-[#FF385C] hover:bg-red-600 text-white py-2 rounded-lg text-sm sm:text-base font-medium transition duration-300">
+                  Remove from Favourites
+                </button>
+              </form>
+            </div>
+          </div>
+        <% }) %>
+      </div>
+    </main>
+  <% } else { %>
+    <div class="col-span-full flex flex-col items-center justify-center py-12 bg-gray-50 dark:bg-gray-900 rounded-lg shadow-inner transition-colors duration-300">
+      <svg xmlns="http://www.w3.org/2000/svg" 
+           class="h-12 w-12 text-red-400 mb-4" 
+           fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+          d="M4.318 6.318a4.5 4.5 0 016.364 0L12 7.636l1.318-1.318a4.5 
+             4.5 0 116.364 6.364L12 21.364l-7.682-7.682a4.5 
+             4.5 0 010-6.364z" />
+      </svg>
+      <p class="text-gray-600 dark:text-gray-300 text-lg font-medium mb-2">
+        You haven’t added any favorites yet.
+      </p>
+      <a href="/homes" 
+         class="inline-block px-6 py-2 mt-2 bg-red-500 hover:bg-red-600 text-white rounded-full shadow-md transition duration-300">
+        Browse Homes
+      </a>
+    </div>
+  <% } %>
+<style>
+      @keyframes fadeInUp {
+      0% {
+        opacity: 0;
+        transform: translateY(40px) scale(0.9);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+    .animate-fadeInUp {
+      animation: fadeInUp 0.2s ease-out forwards;
+    }
+  </style>
 </body>
 </html>
