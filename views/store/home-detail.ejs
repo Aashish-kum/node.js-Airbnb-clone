@@ -1,9 +1,9 @@
 <%- include('../partials/head') %>
 </head>
-<body class="bg-gray-50">
+<body class="bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-300">
   <%- include('../partials/nav') %>
 
-  <main class="container mx-auto bg-white shadow-lg rounded-2xl p-6 sm:p-10 mt-8 sm:mt-12 max-w-6xl">
+  <main class="container mx-auto bg-white dark:bg-gray-800 shadow-lg rounded-2xl p-6 sm:p-10 mt-8 sm:mt-12 max-w-6xl transition-colors duration-300 animate-fadeInUp">
     
     <!-- Title -->
     <h1 class="text-2xl sm:text-3xl text-[#FF385C] font-bold mb-6 text-center">
@@ -23,44 +23,32 @@
       <div class="space-y-6">
         
         <!-- Location -->
-        <div class="border-b pb-4">
+        <div class="border-b border-gray-200 dark:border-gray-600 pb-4">
           <h3 class="text-xl sm:text-2xl font-semibold mb-2">Location</h3>
-          <p class="text-gray-700">
+          <p class="text-gray-700 dark:text-gray-300">
             <i class="fas fa-map-marker-alt text-[#FF385C] mr-2"></i>
             <%= home.location %>
           </p>
         </div>
 
         <!-- Description -->
-        <div class="border-b pb-4">
+        <div class="border-b border-gray-200 dark:border-gray-600 pb-4">
           <h3 class="text-xl sm:text-2xl font-semibold mb-2">Description</h3>
-          <p class="text-gray-600 leading-relaxed">
+          <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
             <%= home.description %>
           </p>
         </div>
 
         <!-- Amenities -->
-        <div class="border-b pb-4">
+        <div class="border-b border-gray-200 dark:border-gray-600 pb-4">
           <h3 class="text-xl sm:text-2xl font-semibold mb-4">Amenities</h3>
-          <div class="grid grid-cols-2 gap-4 text-gray-700">
-            <div class="flex items-center">
-              <i class="fas fa-wifi text-blue-500 mr-2"></i> WiFi
-            </div>
-            <div class="flex items-center">
-              <i class="fas fa-tv text-green-500 mr-2"></i> TV
-            </div>
-            <div class="flex items-center">
-              <i class="fas fa-snowflake text-cyan-500 mr-2"></i> Air Conditioning
-            </div>
-            <div class="flex items-center">
-              <i class="fas fa-utensils text-orange-500 mr-2"></i> Kitchen
-            </div>
-            <div class="flex items-center">
-              <i class="fas fa-car text-purple-500 mr-2"></i> Free Parking
-            </div>
-            <div class="flex items-center">
-              <i class="fas fa-swimmer text-indigo-500 mr-2"></i> Pool
-            </div>
+          <div class="grid grid-cols-2 gap-4 text-gray-700 dark:text-gray-300">
+            <div class="flex items-center"><i class="fas fa-wifi text-blue-500 mr-2"></i> WiFi</div>
+            <div class="flex items-center"><i class="fas fa-tv text-green-500 mr-2"></i> TV</div>
+            <div class="flex items-center"><i class="fas fa-snowflake text-cyan-500 mr-2"></i> Air Conditioning</div>
+            <div class="flex items-center"><i class="fas fa-utensils text-orange-500 mr-2"></i> Kitchen</div>
+            <div class="flex items-center"><i class="fas fa-car text-purple-500 mr-2"></i> Free Parking</div>
+            <div class="flex items-center"><i class="fas fa-swimmer text-indigo-500 mr-2"></i> Pool</div>
           </div>
         </div>
       </div>
@@ -69,28 +57,27 @@
       <div class="space-y-6">
         
         <!-- Price -->
-        <div class="border-b pb-4">
+        <div class="border-b border-gray-200 dark:border-gray-600 pb-4">
           <h3 class="text-xl sm:text-2xl font-semibold mb-2">Price</h3>
-          <p class="text-green-600 text-lg sm:text-xl font-bold">
+          <p class="text-green-600 dark:text-green-400 text-lg sm:text-xl font-bold">
             ₹<%= home.price %> / night
           </p>
         </div>
 
         <!-- Rating -->
-        <div class="border-b pb-4">
+        <div class="border-b border-gray-200 dark:border-gray-600 pb-4">
           <h3 class="text-xl sm:text-2xl font-semibold mb-2">Rating</h3>
           <div class="flex items-center">
             <span class="text-yellow-400 text-2xl">★</span>
-            <span class="ml-2 text-gray-800 text-lg"><%= home.rating %> / 5</span>
+            <span class="ml-2 text-gray-800 dark:text-gray-200 text-lg"><%= home.rating %> / 5</span>
           </div>
         </div>
 
         <!-- Buttons -->
         <div class="flex flex-col sm:flex-row gap-4">
           <!-- Book Button -->
-          <!-- <a href="/book/<%= home._id %>"  -->
-            <a href="/bookings"
-             class="flex-1 bg-blue-600 text-white py-2 rounded-lg font-medium text-center hover:bg-blue-700 transition">
+          <a href="/bookings"
+             class="flex-1 bg-blue-600 dark:bg-blue-700 text-white py-2 rounded-lg font-medium text-center hover:bg-blue-700 dark:hover:bg-blue-800 transition">
             Book Now
           </a>
 
@@ -102,5 +89,20 @@
       </div>
     </div>
   </main>
+  <style>
+      @keyframes fadeInUp {
+      0% {
+        opacity: 0;
+        transform: translateY(40px) scale(0.9);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+    .animate-fadeInUp {
+      animation: fadeInUp 0.2s ease-out forwards;
+    }
+  </style>
 </body>
 </html>
