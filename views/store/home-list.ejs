@@ -1,10 +1,10 @@
 <%- include('../partials/head') %>
 </head>
 
-<body class="bg-gray-100">
+<body class="bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-300">
   <%- include('../partials/nav') %>
 
-  <main class="container mx-auto bg-white shadow-lg rounded-lg p-6 sm:p-8 mt-10 max-w-6xl">
+  <main class="container mx-auto bg-white dark:bg-gray-800 shadow-lg rounded-lg p-6 sm:p-8 mt-10 max-w-6xl transition-colors duration-300 animate-fadeInUp">
     <h2 class="text-2xl sm:text-3xl text-red-500 font-bold text-center mb-6">
       Here are our registered homes:
     </h2>
@@ -13,22 +13,26 @@
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
       <% registeredHomes.forEach(home => { %>
         <div
-          class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300 flex flex-col">
+          class="bg-white dark:bg-gray-700 rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300 flex flex-col">
           
           <!-- Image -->
           <% if (isloggedIn) { %>
           <a href="/homes/<%= home._id %>">
-            <% } %>
-            <img src="<%= home.photo %>" class="w-full h-52 object-cover transform hover:scale-105 transition duration-300" />
+          <% } %>
+            <img src="<%= home.photo %>" 
+                 alt="<%= home.houseName %>"
+                 class="w-full h-52 object-cover transform hover:scale-105 transition duration-300" />
+          <% if (isloggedIn) { %>
           </a>
+          <% } %>
 
           <!-- Content -->
           <div class="p-4 flex flex-col flex-grow">
-            <h3 class="text-lg sm:text-xl font-semibold text-gray-800 mb-2">
+            <h3 class="text-lg sm:text-xl font-semibold text-gray-800 dark:text-gray-100 mb-2 truncate">
               <%= home.houseName %>
             </h3>
-            <p class="text-gray-600 mb-2">
-              <i class="fas fa-map-marker-alt mr-2"></i>
+            <p class="text-gray-600 dark:text-gray-300 mb-2 flex items-center">
+              <i class="fas fa-map-marker-alt text-red-500 mr-2"></i>
               <%= home.location %>
             </p>
 
@@ -50,7 +54,7 @@
                        c-.887-.76-.415-2.212.749-2.305l5.404-.433 
                        2.082-5.006z" clip-rule="evenodd" />
                 </svg>
-                <span class="text-gray-700"><%= home.rating %></span>
+                <span class="text-gray-700 dark:text-gray-200"><%= home.rating %></span>
               </div>
             </div>
 
@@ -58,20 +62,35 @@
             <div class="mt-auto flex gap-3">
               <!-- Details Button -->
               <a href="/homes/<%= home._id %>" 
-                class="flex-1 inline-flex items-center justify-center px-4 py-2 rounded-full bg-blue-600 text-white text-sm sm:text-base font-medium shadow-sm hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-300 transition">
+                 class="flex-1 inline-flex items-center justify-center px-4 py-2 rounded-full bg-blue-600 dark:bg-blue-700 text-white text-sm sm:text-base font-medium shadow-sm hover:bg-blue-700 dark:hover:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-blue-300 transition">
                 Details
               </a>
 
               <!-- Favorites Button -->
-              <button type="button"
-                  aria-label="Book">
-                  <%- include('../partials/favourites',{home : home}) %>
-                </button>
+              <div class="flex-1">
+                <%- include('../partials/favourites',{home : home}) %>
+              </div>
             </div>
           </div>
         </div>
       <% }) %>
     </div>
   </main>
+  <style>
+      @keyframes fadeInUp {
+      0% {
+        opacity: 0;
+        transform: translateY(40px) scale(0.9);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+    .animate-fadeInUp {
+      animation: fadeInUp 0.2s ease-out forwards;
+    }
+  </style>
+
 </body>
 </html>
