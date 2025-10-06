@@ -1,29 +1,29 @@
-<%- include('../../partials/head') %>
+<%- include('../../partials/head.ejs') %>
 </head>
-<body class="bg-gray-50">
+<body class="bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-300">
 
   <main class="container mx-auto mt-10 px-6 sm:px-8">
-    <section class="bg-white shadow-xl rounded-3xl p-8 sm:p-12 space-y-12">
+    <section class="bg-white dark:bg-gray-800 shadow-xl rounded-3xl p-8 sm:p-12 space-y-12 transition-colors duration-300">
 
       <!-- Title -->
       <div class="text-center space-y-4">
-        <h1 class="text-4xl sm:text-5xl font-extrabold text-red-600">Cancellation Options</h1>
-        <p class="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">
+        <h1 class="text-4xl sm:text-5xl font-extrabold text-red-600 dark:text-red-400">Cancellation Options</h1>
+        <p class="text-lg sm:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
           Plans change, and we understand. Our cancellation policies are designed to give both 
           <span class="font-semibold">guests and hosts</span> flexibility and peace of mind.
         </p>
       </div>
 
       <!-- Guest Cancellations -->
-      <div class="space-y-4 border-t pt-8">
-        <h2 class="text-2xl font-bold text-gray-800 flex items-center gap-2">
+      <div class="space-y-4 border-t border-gray-200 dark:border-gray-700 pt-8">
+        <h2 class="text-2xl font-bold text-gray-800 dark:text-gray-100 flex items-center gap-2">
           <i class="fa-solid fa-user text-red-500"></i> Guest Cancellations
         </h2>
-        <p class="text-gray-700 leading-relaxed">
+        <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
           Guests can cancel their bookings according to the cancellation policy chosen by the host. 
           Depending on the timing, refunds may vary:
         </p>
-        <ul class="list-disc list-inside text-gray-700 leading-relaxed space-y-2">
+        <ul class="list-disc list-inside text-gray-700 dark:text-gray-300 leading-relaxed space-y-2">
           <li><strong>Flexible:</strong> Full refund if canceled up to 24 hours before check-in.</li>
           <li><strong>Moderate:</strong> Full refund if canceled 5 days before check-in.</li>
           <li><strong>Strict:</strong> 50% refund if canceled at least 7 days before check-in.</li>
@@ -31,25 +31,25 @@
       </div>
 
       <!-- Host Cancellations -->
-      <div class="space-y-4 border-t pt-8">
-        <h2 class="text-2xl font-bold text-gray-800 flex items-center gap-2">
+      <div class="space-y-4 border-t border-gray-200 dark:border-gray-700 pt-8">
+        <h2 class="text-2xl font-bold text-gray-800 dark:text-gray-100 flex items-center gap-2">
           <i class="fa-solid fa-house text-red-500"></i> Host Cancellations
         </h2>
-        <p class="text-gray-700 leading-relaxed">
+        <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
           We strongly discourage host cancellations. However, in cases where a host must cancel:
         </p>
-        <ul class="list-disc list-inside text-gray-700 leading-relaxed space-y-2">
+        <ul class="list-disc list-inside text-gray-700 dark:text-gray-300 leading-relaxed space-y-2">
           <li>Guests receive a full refund automatically.</li>
           <li>Hosts may face penalties or account restrictions for repeated cancellations.</li>
         </ul>
       </div>
 
       <!-- Exceptional Circumstances -->
-      <div class="space-y-4 border-t pt-8">
-        <h2 class="text-2xl font-bold text-gray-800 flex items-center gap-2">
+      <div class="space-y-4 border-t border-gray-200 dark:border-gray-700 pt-8">
+        <h2 class="text-2xl font-bold text-gray-800 dark:text-gray-100 flex items-center gap-2">
           <i class="fa-solid fa-exclamation-circle text-red-500"></i> Exceptional Circumstances
         </h2>
-        <p class="text-gray-700 leading-relaxed">
+        <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
           In rare cases such as natural disasters, medical emergencies, or government travel 
           restrictions, guests and hosts may cancel without penalties under our 
           <span class="font-semibold">Extenuating Circumstances Policy</span>.
@@ -57,11 +57,11 @@
       </div>
 
       <!-- FAQs -->
-      <div class="space-y-4 border-t pt-8">
-        <h2 class="text-2xl font-bold text-gray-800 flex items-center gap-2">
+      <div class="space-y-4 border-t border-gray-200 dark:border-gray-700 pt-8">
+        <h2 class="text-2xl font-bold text-gray-800 dark:text-gray-100 flex items-center gap-2">
           <i class="fa-solid fa-circle-question text-red-500"></i> Frequently Asked Questions
         </h2>
-        <ul class="list-disc list-inside text-gray-700 leading-relaxed space-y-2">
+        <ul class="list-disc list-inside text-gray-700 dark:text-gray-300 leading-relaxed space-y-2">
           <li><strong>How do I cancel a booking?</strong> — Go to "My Trips" and select "Cancel Reservation".</li>
           <li><strong>When will I get my refund?</strong> — Refunds are processed within 5–10 business days.</li>
           <li><strong>Can I change my dates instead of canceling?</strong> — Yes, you can request a date change with the host.</li>
@@ -69,15 +69,15 @@
       </div>
 
       <!-- CTA -->
-      <div class="bg-red-50 border border-red-200 p-8 rounded-2xl text-center space-y-4">
-        <h3 class="text-xl font-semibold text-red-600">Need help with cancellations?</h3>
+      <div class="bg-red-50 dark:bg-red-900 border border-red-200 dark:border-red-700 p-8 rounded-2xl text-center space-y-4 transition-colors duration-300">
+        <h3 class="text-xl font-semibold text-red-600 dark:text-red-400">Need help with cancellations?</h3>
         <div class="flex flex-col sm:flex-row justify-center gap-4">
           <a href="/help" 
-             class="bg-gray-700 text-white px-6 py-3 rounded-xl shadow hover:bg-gray-900 transition">
+             class="bg-gray-700 dark:bg-gray-800 text-white px-6 py-3 rounded-xl shadow hover:bg-gray-900 dark:hover:bg-gray-700 transition focus:outline-none focus:ring-2 focus:ring-red-500">
             Visit Help Center
           </a>
           <a href="/" 
-             class="bg-red-600 text-white px-6 py-3 rounded-xl shadow hover:bg-red-700 transition">
+             class="bg-red-600 dark:bg-red-700 text-white px-6 py-3 rounded-xl shadow hover:bg-red-700 dark:hover:bg-red-600 transition focus:outline-none focus:ring-2 focus:ring-red-500">
             ← Back to Home
           </a>
         </div>

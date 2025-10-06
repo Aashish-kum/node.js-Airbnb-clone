@@ -1,88 +1,104 @@
 <%- include('../partials/head') %>
 </head>
-<body class="bg-gray-50">
+<body class="bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-300">
 
   <main class="container mx-auto mt-10 px-6 sm:px-8">
-    <section class="bg-white shadow-xl rounded-3xl p-8 sm:p-12 space-y-12">
+    <section class="bg-white dark:bg-gray-800 shadow-xl rounded-3xl p-8 sm:p-12 space-y-12 transition-colors duration-300 animate-fadeInUp">
 
       <!-- Title -->
       <div class="text-center space-y-4">
-        <h1 class="text-4xl sm:text-5xl font-extrabold text-gray-900">Sitemap</h1>
-        <p class="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">
+        <h1 class="text-4xl sm:text-5xl font-extrabold text-gray-900 dark:text-gray-100">
+          Sitemap
+        </h1>
+        <p class="text-lg sm:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
           A complete overview of all pages on the Airbnb Clone platform.
         </p>
       </div>
 
       <!-- Sitemap Grid -->
-      <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-8 text-gray-700">
+      <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-8 text-gray-700 dark:text-gray-300">
 
         <!-- Support -->
         <div>
-          <h2 class="font-semibold text-gray-900 mb-4 text-lg">Support</h2>
+          <h2 class="font-semibold text-gray-900 dark:text-gray-100 mb-4 text-lg">Support</h2>
           <ul class="space-y-2">
-            <li><a href="/help" class="hover:text-black hover:underline transition">Help Center</a></li>
-            <li><a href="/airCover" class="hover:text-black hover:underline transition">AirCover</a></li>
-            <li><a href="/antiDis" class="hover:text-black hover:underline transition">Anti-discrimination</a></li>
-            <li><a href="/support" class="hover:text-black hover:underline transition">Disability support</a></li>
-            <li><a href="/cancel-options" class="hover:text-black hover:underline transition">Cancellation options</a></li>
+            <li><a href="/help" class="hover:text-black dark:hover:text-white hover:underline transition">Help Center</a></li>
+            <li><a href="/airCover" class="hover:text-black dark:hover:text-white hover:underline transition">AirCover</a></li>
+            <li><a href="/antiDis" class="hover:text-black dark:hover:text-white hover:underline transition">Anti-discrimination</a></li>
+            <li><a href="/support" class="hover:text-black dark:hover:text-white hover:underline transition">Disability support</a></li>
+            <li><a href="/cancel-options" class="hover:text-black dark:hover:text-white hover:underline transition">Cancellation options</a></li>
           </ul>
         </div>
 
         <!-- Hosting -->
         <div>
-          <h2 class="font-semibold text-gray-900 mb-4 text-lg">Hosting</h2>
+          <h2 class="font-semibold text-gray-900 dark:text-gray-100 mb-4 text-lg">Hosting</h2>
           <ul class="space-y-2">
-            <li><a href="/airbnb-your-home" class="hover:text-black hover:underline transition">Airbnb Your Home</a></li>
-            <li><a href="/aircover-hosts" class="hover:text-black hover:underline transition">AirCover for Hosts</a></li>
-            <li><a href="/explore-host-resources" class="hover:text-black hover:underline transition">Explore Hosting Resources</a></li>
-            <li><a href="/community-forum" class="hover:text-black hover:underline transition">Community Forum</a></li>
+            <li><a href="/airbnb-your-home" class="hover:text-black dark:hover:text-white hover:underline transition">Airbnb Your Home</a></li>
+            <li><a href="/aircover-hosts" class="hover:text-black dark:hover:text-white hover:underline transition">AirCover for Hosts</a></li>
+            <li><a href="/explore-host-resources" class="hover:text-black dark:hover:text-white hover:underline transition">Explore Hosting Resources</a></li>
+            <li><a href="/community-forum" class="hover:text-black dark:hover:text-white hover:underline transition">Community Forum</a></li>
           </ul>
         </div>
 
         <!-- Company -->
         <div>
-          <h2 class="font-semibold text-gray-900 mb-4 text-lg">Company</h2>
+          <h2 class="font-semibold text-gray-900 dark:text-gray-100 mb-4 text-lg">Company</h2>
           <ul class="space-y-2">
-            <li><a href="/about" class="hover:text-black hover:underline transition">About Us</a></li>
-            <li><a href="/careers" class="hover:text-black hover:underline transition">Careers</a></li>
-            <li><a href="/newsroom" class="hover:text-black hover:underline transition">Newsroom</a></li>
-            <li><a href="/investors" class="hover:text-black hover:underline transition">Investors</a></li>
+            <li><a href="/about" class="hover:text-black dark:hover:text-white hover:underline transition">About Us</a></li>
+            <li><a href="/careers" class="hover:text-black dark:hover:text-white hover:underline transition">Careers</a></li>
+            <li><a href="/newsroom" class="hover:text-black dark:hover:text-white hover:underline transition">Newsroom</a></li>
+            <li><a href="/investors" class="hover:text-black dark:hover:text-white hover:underline transition">Investors</a></li>
           </ul>
         </div>
 
         <!-- Discover -->
         <div>
-          <h2 class="font-semibold text-gray-900 mb-4 text-lg">Discover</h2>
+          <h2 class="font-semibold text-gray-900 dark:text-gray-100 mb-4 text-lg">Discover</h2>
           <ul class="space-y-2">
-            <li><a href="/trust-safety" class="hover:text-black hover:underline transition">Trust & Safety</a></li>
-            <li><a href="/travel-credit" class="hover:text-black hover:underline transition">Travel Credit</a></li>
-            <li><a href="/gift-cards" class="hover:text-black hover:underline transition">Gift Cards</a></li>
-            <li><a href="https://www.airbnb.co.in/?c=.pi0.pk22323507540_179008573169" target="_blank" class="hover:text-black hover:underline transition">Airbnb.org</a></li>
+            <li><a href="/trust-safety" class="hover:text-black dark:hover:text-white hover:underline transition">Trust & Safety</a></li>
+            <li><a href="/travel-credit" class="hover:text-black dark:hover:text-white hover:underline transition">Travel Credit</a></li>
+            <li><a href="/gift-cards" class="hover:text-black dark:hover:text-white hover:underline transition">Gift Cards</a></li>
+            <li><a href="https://www.airbnb.co.in/?c=.pi0.pk22323507540_179008573169" target="_blank" class="hover:text-black dark:hover:text-white hover:underline transition">Airbnb.org</a></li>
           </ul>
         </div>
 
         <!-- Legal -->
         <div>
-          <h2 class="font-semibold text-gray-900 mb-4 text-lg">Legal</h2>
+          <h2 class="font-semibold text-gray-900 dark:text-gray-100 mb-4 text-lg">Legal</h2>
           <ul class="space-y-2">
-            <li><a href="/privacy" class="hover:text-black hover:underline transition">Privacy</a></li>
-            <li><a href="/terms" class="hover:text-black hover:underline transition">Terms</a></li>
-            <li><a href="/sitemap" class="hover:text-black hover:underline transition">Sitemap</a></li>
+            <li><a href="/privacy" class="hover:text-black dark:hover:text-white hover:underline transition">Privacy</a></li>
+            <li><a href="/terms" class="hover:text-black dark:hover:text-white hover:underline transition">Terms</a></li>
+            <li><a href="/sitemap" class="hover:text-black dark:hover:text-white hover:underline transition">Sitemap</a></li>
           </ul>
         </div>
 
       </div>
 
       <!-- Back Home CTA -->
-      <div class="bg-indigo-50 border border-indigo-200 p-8 rounded-2xl text-center mt-12">
+      <div class="bg-indigo-50 dark:bg-indigo-900 border border-indigo-200 dark:border-indigo-700 p-8 rounded-2xl text-center mt-12 transition-colors duration-300">
         <a href="/" 
-           class="bg-gray-700 text-white px-6 py-3 rounded-xl shadow hover:bg-gray-900 transition">
+           class="bg-gray-700 dark:bg-gray-600 text-white px-6 py-3 rounded-xl shadow hover:bg-gray-900 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-400 transition">
           ← Back to Home
         </a>
       </div>
 
     </section>
   </main>
-
+<style>
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    .animate-fadeInUp {
+      animation: fadeInUp 0.3s ease-out;
+    }
+  </style>
 </body>
 </html>

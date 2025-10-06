@@ -1,109 +1,159 @@
 <%- include('../../partials/head') %>
-    </head>
+  </head>
 
-    <body class="bg-gray-50">
+  <body class="bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-300">
 
-        <main class="container mx-auto mt-10 px-6 sm:px-8">
-            <section class="bg-white shadow-xl rounded-3xl p-8 sm:p-12 space-y-12">
+    <main class="container mx-auto mt-10 px-6 sm:px-8 animate-fadeInUp">
+      <section
+        class="bg-white dark:bg-gray-800 shadow-xl rounded-3xl p-8 sm:p-12 space-y-12 transition-colors duration-300">
 
-                <!-- Hero -->
-                <div class="text-center space-y-6">
-                    <i class="fa-solid fa-briefcase text-pink-500 text-5xl"></i>
-                    <h1 class="text-4xl sm:text-5xl font-extrabold text-gray-900">Careers at Airbnb Clone</h1>
-                    <p class="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">
-                        Join our mission to create a world where anyone can belong anywhere.
-                        We’re building the future of travel, hosting, and community.
-                    </p>
-                </div>
+        <!-- Hero -->
+        <div class="text-center space-y-6">
+          <i class="fa-solid fa-briefcase text-pink-500 text-5xl"></i>
+          <h1 class="text-4xl sm:text-5xl font-extrabold text-gray-900 dark:text-gray-100">Careers at Airbnb Clone</h1>
+          <p class="text-lg sm:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+            Join our mission to create a world where anyone can belong anywhere.
+            We’re building the future of travel, hosting, and community.
+          </p>
+        </div>
 
-                <!-- Why Work With Us -->
-                <div class="grid md:grid-cols-2 gap-10 items-center">
-                    <div>
-                        <h2 class="text-2xl font-bold text-gray-900 mb-4">Why Work With Us?</h2>
-                        <p class="text-gray-600 leading-relaxed">
-                            At our company, you’ll work with a passionate, creative, and diverse team.
-                            We value innovation, collaboration, and inclusivity.
-                            Whether you’re a developer, designer, or storyteller, your work will make travel more
-                            meaningful for people everywhere.
-                        </p>
-                    </div>
-                    <div>
-                        <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="Team collaboration"
-                            class="rounded-2xl shadow-lg w-full max-w-md mx-auto">
-                    </div>
-                </div>
+        <!-- Why Work With Us -->
+        <div class="grid md:grid-cols-2 gap-10 items-center">
+          <div>
+            <h2 class="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-4">Why Work With Us?</h2>
+            <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+              At our company, you’ll work with a passionate, creative, and diverse team.
+              We value innovation, collaboration, and inclusivity.
+              Whether you’re a developer, designer, or storyteller, your work will make travel more
+              meaningful for people everywhere.
+            </p>
+          </div>
+          <div>
+            <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="Team collaboration"
+              class="rounded-2xl shadow-lg w-full max-w-md mx-auto">
+          </div>
+        </div>
 
+        <!-- Open Roles -->
+        <div class="space-y-6">
+          <h2 class="text-2xl font-bold text-gray-900 dark:text-gray-100 text-center">Open Roles</h2>
+          <p class="text-gray-600 dark:text-gray-300 text-center max-w-2xl mx-auto">
+            Explore opportunities to grow your career. We’re always looking for talented individuals
+            who want to make an impact.
+          </p>
 
-                <!-- Open Roles -->
-                <div class="space-y-6">
-                    <h2 class="text-2xl font-bold text-gray-900 text-center">Open Roles</h2>
-                    <p class="text-gray-600 text-center max-w-2xl mx-auto">
-                        Explore opportunities to grow your career. We’re always looking for talented individuals
-                        who want to make an impact.
-                    </p>
+          <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
+            <!-- Role 1 -->
+            <div class="bg-gray-50 dark:bg-gray-700 rounded-2xl p-6 shadow hover:shadow-lg transition">
+              <h3 class="font-semibold text-gray-900 dark:text-gray-100 text-lg">Frontend Developer</h3>
+              <p class="text-gray-600 dark:text-gray-300 text-sm mt-2">
+                Build seamless user interfaces with React, Tailwind, and EJS.
+              </p>
+              <a href="#"
+                class="inline-block mt-4 text-pink-600 dark:text-pink-400 font-medium hover:underline focus:outline-none focus:ring-2 focus:ring-pink-300">
+                Apply Now
+              </a>
+            </div>
 
-                    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
-                        <!-- Role 1 -->
-                        <div class="bg-gray-50 rounded-2xl p-6 shadow hover:shadow-lg transition">
-                            <h3 class="font-semibold text-gray-900 text-lg">Frontend Developer</h3>
-                            <p class="text-gray-600 text-sm mt-2">Build seamless user interfaces with React, Tailwind,
-                                and EJS.</p>
-                            <a href="#" class="inline-block mt-4 text-pink-600 font-medium hover:underline">Apply
-                                Now</a>
-                        </div>
+            <!-- Role 2 -->
+            <div class="bg-gray-50 dark:bg-gray-700 rounded-2xl p-6 shadow hover:shadow-lg transition">
+              <h3 class="font-semibold text-gray-900 dark:text-gray-100 text-lg">Backend Developer</h3>
+              <p class="text-gray-600 dark:text-gray-300 text-sm mt-2">
+                Design and optimize Node.js APIs and databases for performance.
+              </p>
+              <a href="#"
+                class="inline-block mt-4 text-pink-600 dark:text-pink-400 font-medium hover:underline focus:outline-none focus:ring-2 focus:ring-pink-300">
+                Apply Now
+              </a>
+            </div>
 
-                        <!-- Role 2 -->
-                        <div class="bg-gray-50 rounded-2xl p-6 shadow hover:shadow-lg transition">
-                            <h3 class="font-semibold text-gray-900 text-lg">Backend Developer</h3>
-                            <p class="text-gray-600 text-sm mt-2">Design and optimize Node.js APIs and databases for
-                                performance.</p>
-                            <a href="#" class="inline-block mt-4 text-pink-600 font-medium hover:underline">Apply
-                                Now</a>
-                        </div>
+            <!-- Role 3 -->
+            <div class="bg-gray-50 dark:bg-gray-700 rounded-2xl p-6 shadow hover:shadow-lg transition">
+              <h3 class="font-semibold text-gray-900 dark:text-gray-100 text-lg">UI/UX Designer</h3>
+              <p class="text-gray-600 dark:text-gray-300 text-sm mt-2">
+                Craft intuitive, elegant designs that enhance user experience.
+              </p>
+              <a href="#"
+                class="inline-block mt-4 text-pink-600 dark:text-pink-400 font-medium hover:underline focus:outline-none focus:ring-2 focus:ring-pink-300">
+                Apply Now
+              </a>
+            </div>
+          </div>
+        </div>
 
-                        <!-- Role 3 -->
-                        <div class="bg-gray-50 rounded-2xl p-6 shadow hover:shadow-lg transition">
-                            <h3 class="font-semibold text-gray-900 text-lg">UI/UX Designer</h3>
-                            <p class="text-gray-600 text-sm mt-2">Craft intuitive, elegant designs that enhance user
-                                experience.</p>
-                            <a href="#" class="inline-block mt-4 text-pink-600 font-medium hover:underline">Apply
-                                Now</a>
-                        </div>
-                    </div>
-                </div>
+        <!-- Culture & Benefits -->
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
+          <div class="p-6 bg-pink-50 dark:bg-pink-900 rounded-2xl shadow text-center transition">
+            <i class="fa-solid fa-users text-pink-600 dark:text-pink-400 text-3xl mb-4"></i>
+            <h3 class="font-semibold text-lg text-gray-900 dark:text-gray-100">Collaborative Culture</h3>
+            <p class="text-gray-600 dark:text-gray-300 text-sm mt-2">We thrive on teamwork and open communication.</p>
+          </div>
+          <div class="p-6 bg-pink-50 dark:bg-pink-900 rounded-2xl shadow text-center transition">
+            <i class="fa-solid fa-heart text-pink-600 dark:text-pink-400 text-3xl mb-4"></i>
+            <h3 class="font-semibold text-lg text-gray-900 dark:text-gray-100">Work-Life Balance</h3>
+            <p class="text-gray-600 dark:text-gray-300 text-sm mt-2">Flexible hours and remote-friendly opportunities.
+            </p>
+          </div>
+          <div class="p-6 bg-pink-50 dark:bg-pink-900 rounded-2xl shadow text-center transition">
+            <i class="fa-solid fa-graduation-cap text-pink-600 dark:text-pink-400 text-3xl mb-4"></i>
+            <h3 class="font-semibold text-lg text-gray-900 dark:text-gray-100">Learning & Growth</h3>
+            <p class="text-gray-600 dark:text-gray-300 text-sm mt-2">We support professional development and career
+              growth.</p>
+          </div>
+        </div>
 
-                <!-- Culture & Benefits -->
-                <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
-                    <div class="p-6 bg-pink-50 rounded-2xl shadow text-center">
-                        <i class="fa-solid fa-users text-pink-600 text-3xl mb-4"></i>
-                        <h3 class="font-semibold text-lg">Collaborative Culture</h3>
-                        <p class="text-gray-600 text-sm mt-2">We thrive on teamwork and open communication.</p>
-                    </div>
-                    <div class="p-6 bg-pink-50 rounded-2xl shadow text-center">
-                        <i class="fa-solid fa-heart text-pink-600 text-3xl mb-4"></i>
-                        <h3 class="font-semibold text-lg">Work-Life Balance</h3>
-                        <p class="text-gray-600 text-sm mt-2">Flexible hours and remote-friendly opportunities.</p>
-                    </div>
-                    <div class="p-6 bg-pink-50 rounded-2xl shadow text-center">
-                        <i class="fa-solid fa-graduation-cap text-pink-600 text-3xl mb-4"></i>
-                        <h3 class="font-semibold text-lg">Learning & Growth</h3>
-                        <p class="text-gray-600 text-sm mt-2">We support professional development and career growth.</p>
-                    </div>
-                </div>
+        <!-- CTA -->
+        <div class="bg-pink-50 dark:bg-pink-900 border border-pink-200 dark:border-pink-700 
+    p-8 rounded-2xl text-center space-y-6 transition-colors duration-300">
+          <h3 class="text-2xl font-semibold text-pink-700 dark:text-pink-400">🚀 Ready to Join Us?</h3>
+          <p class="text-gray-600 dark:text-gray-300">Explore exciting roles and start your journey with us today.</p>
 
-                <!-- CTA -->
-                <div class="bg-pink-50 border border-pink-200 p-8 rounded-2xl text-center space-y-6">
-                    <h3 class="text-2xl font-semibold text-pink-700">🚀 Ready to Join Us?</h3>
-                    <p class="text-gray-600">Explore exciting roles and start your journey with us today.</p>
-                    <a href="#"
-                        class="bg-pink-600 text-white px-8 py-3 rounded-xl shadow hover:bg-pink-700 transition text-lg">
-                        View All Openings
-                    </a>
-                </div>
+          <!-- Buttons wrapper -->
+          <div class="flex flex-col sm:flex-row justify-center gap-4">
+            <!-- Primary CTA -->
+            <a href="#" class="inline-block bg-pink-600 dark:bg-pink-700 
+              text-white font-semibold px-8 py-3 rounded-xl 
+              shadow-md hover:shadow-lg 
+              hover:bg-pink-700 dark:hover:bg-pink-600 
+              transition-all duration-300 
+              text-lg focus:outline-none focus:ring-4 
+              focus:ring-pink-300 dark:focus:ring-pink-800 
+              transform hover:-translate-y-0.5">
+              View All Openings
+            </a>
 
-            </section>
-        </main>
+            <!-- Secondary Back Home Button -->
+            <a href="/" class="inline-block bg-white dark:bg-gray-800 
+              text-pink-600 dark:text-pink-400 font-semibold 
+              px-8 py-3 rounded-xl border border-pink-300 dark:border-pink-600
+              shadow-sm hover:shadow-md 
+              hover:bg-pink-50 dark:hover:bg-gray-700 
+              transition-all duration-300 
+              text-lg focus:outline-none focus:ring-4 
+              focus:ring-pink-200 dark:focus:ring-pink-800 
+              transform hover:-translate-y-0.5">
+              Back to Home
+            </a>
+          </div>
+        </div>
 
-    </body>
+      </section>
+    </main>
+<style>
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    .animate-fadeInUp {
+      animation: fadeInUp 0.3s ease-out;
+    }
+  </style>
+  </body>
 
-    </html>
+  </html>

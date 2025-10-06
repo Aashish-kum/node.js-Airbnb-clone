@@ -1,39 +1,39 @@
 <%- include('../../partials/head') %>
 </head>
-<body class="bg-gray-50">
+<body class="bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-300">
 
   <main class="container mx-auto mt-10 px-6 sm:px-8">
-    <section class="bg-white shadow-xl rounded-3xl p-8 sm:p-12 space-y-12">
+    <section class="bg-white dark:bg-gray-800 shadow-xl rounded-3xl p-8 sm:p-12 space-y-12 transition-colors duration-300 animate-fadeInUp">
 
       <!-- Hero -->
       <div class="text-center space-y-4">
-        <h1 class="text-4xl sm:text-5xl font-extrabold text-gray-900">Gift Cards</h1>
-        <p class="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">
+        <h1 class="text-4xl sm:text-5xl font-extrabold text-gray-900 dark:text-gray-100">Gift Cards</h1>
+        <p class="text-lg sm:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
           Give the gift of travel! Airbnb Gift Cards make it easy for your friends and family to enjoy unique stays and experiences around the world.
         </p>
       </div>
 
       <!-- Types of Gift Cards -->
       <div class="space-y-8">
-        <h2 class="text-2xl font-bold text-gray-800 flex items-center gap-2">
+        <h2 class="text-2xl font-bold text-gray-800 dark:text-gray-100 flex items-center gap-2">
           <i class="fa-solid fa-gift text-indigo-600"></i> Types of Gift Cards
         </h2>
 
         <div class="grid sm:grid-cols-2 gap-8">
           <!-- Digital Card -->
-          <div class="bg-indigo-50 p-6 rounded-2xl shadow hover:shadow-lg transition text-center">
+          <div class="bg-indigo-50 dark:bg-indigo-900 p-6 rounded-2xl shadow hover:shadow-lg transition text-center">
             <i class="fa-solid fa-envelope text-4xl text-indigo-600 mb-4"></i>
-            <h3 class="text-xl font-semibold text-gray-800">Digital Gift Card</h3>
-            <p class="text-gray-600 text-sm mt-2">
+            <h3 class="text-xl font-semibold text-gray-800 dark:text-gray-100">Digital Gift Card</h3>
+            <p class="text-gray-600 dark:text-gray-300 text-sm mt-2">
               Instantly delivered by email, perfect for last-minute gifts.
             </p>
           </div>
 
           <!-- Physical Card -->
-          <div class="bg-indigo-50 p-6 rounded-2xl shadow hover:shadow-lg transition text-center">
+          <div class="bg-indigo-50 dark:bg-indigo-900 p-6 rounded-2xl shadow hover:shadow-lg transition text-center">
             <i class="fa-solid fa-credit-card text-4xl text-indigo-600 mb-4"></i>
-            <h3 class="text-xl font-semibold text-gray-800">Physical Gift Card</h3>
-            <p class="text-gray-600 text-sm mt-2">
+            <h3 class="text-xl font-semibold text-gray-800 dark:text-gray-100">Physical Gift Card</h3>
+            <p class="text-gray-600 dark:text-gray-300 text-sm mt-2">
               A tangible card delivered by mail, great for special occasions.
             </p>
           </div>
@@ -41,11 +41,11 @@
       </div>
 
       <!-- Redeem -->
-      <div class="space-y-6 border-t pt-8">
-        <h2 class="text-2xl font-bold text-gray-800 flex items-center gap-2">
+      <div class="space-y-6 border-t border-gray-200 dark:border-gray-700 pt-8">
+        <h2 class="text-2xl font-bold text-gray-800 dark:text-gray-100 flex items-center gap-2">
           <i class="fa-solid fa-wallet text-indigo-600"></i> How to Redeem
         </h2>
-        <ol class="list-decimal list-inside text-gray-700 space-y-2">
+        <ol class="list-decimal list-inside text-gray-700 dark:text-gray-300 space-y-2">
           <li>Go to your <strong>Account → Payments</strong> section.</li>
           <li>Enter the 16-digit Gift Card code.</li>
           <li>Your balance will be applied automatically at checkout.</li>
@@ -53,11 +53,11 @@
       </div>
 
       <!-- Terms -->
-      <div class="space-y-6 border-t pt-8">
-        <h2 class="text-2xl font-bold text-gray-800 flex items-center gap-2">
+      <div class="space-y-6 border-t border-gray-200 dark:border-gray-700 pt-8">
+        <h2 class="text-2xl font-bold text-gray-800 dark:text-gray-100 flex items-center gap-2">
           <i class="fa-solid fa-file-contract text-indigo-600"></i> Terms & Conditions
         </h2>
-        <ul class="list-disc list-inside text-gray-700 space-y-2">
+        <ul class="list-disc list-inside text-gray-700 dark:text-gray-300 space-y-2">
           <li>Gift cards are non-refundable and non-transferable.</li>
           <li>Cards do not expire and have no fees.</li>
           <li>Applicable only for eligible bookings.</li>
@@ -66,16 +66,16 @@
       </div>
 
       <!-- CTA -->
-      <div class="bg-indigo-50 border border-indigo-200 p-8 rounded-2xl text-center space-y-4">
-        <h3 class="text-2xl font-semibold text-indigo-700">🎁 Give or Redeem a Gift Card</h3>
-        <p class="text-gray-600">Share the joy of travel with someone special or redeem your card today.</p>
+      <div class="bg-indigo-50 dark:bg-indigo-900 border border-indigo-200 dark:border-indigo-700 p-8 rounded-2xl text-center space-y-4 transition-colors duration-300">
+        <h3 class="text-2xl font-semibold text-indigo-700 dark:text-indigo-400">🎁 Give or Redeem a Gift Card</h3>
+        <p class="text-gray-600 dark:text-gray-300">Share the joy of travel with someone special or redeem your card today.</p>
         <div class="flex flex-col sm:flex-row justify-center gap-4">
           <a href="/buy-gift-card" 
-             class="bg-indigo-600 text-white px-6 py-3 rounded-xl shadow hover:bg-indigo-700 transition">
+             class="bg-indigo-600 dark:bg-indigo-700 text-white px-6 py-3 rounded-xl shadow hover:bg-indigo-700 dark:hover:bg-indigo-600 transition focus:outline-none focus:ring-2 focus:ring-indigo-300">
             Buy a Gift Card
           </a>
           <a href="/redeem-gift-card" 
-             class="bg-gray-700 text-white px-6 py-3 rounded-xl shadow hover:bg-gray-900 transition">
+             class="bg-gray-700 dark:bg-gray-800 text-white px-6 py-3 rounded-xl shadow hover:bg-gray-900 dark:hover:bg-gray-700 transition focus:outline-none focus:ring-2 focus:ring-gray-500">
             Redeem Gift Card
           </a>
         </div>
@@ -83,6 +83,20 @@
 
     </section>
   </main>
-
+<style>
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    .animate-fadeInUp {
+      animation: fadeInUp 0.3s ease-out;
+    }
+  </style>
 </body>
 </html>

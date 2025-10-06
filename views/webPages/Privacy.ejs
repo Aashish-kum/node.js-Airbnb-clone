@@ -1,25 +1,27 @@
 <%- include('../partials/head') %>
 </head>
-<body class="bg-gray-50">
+<body class="bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-300">
 
   <main class="container mx-auto mt-10 px-6 sm:px-8">
-    <section class="bg-white shadow-xl rounded-3xl p-8 sm:p-12 space-y-12">
+    <section class="bg-white dark:bg-gray-800 shadow-xl rounded-3xl p-8 sm:p-12 space-y-12 transition-colors duration-300 animate-fadeInUp">
 
       <!-- Title -->
       <div class="text-center space-y-4">
-        <h1 class="text-4xl sm:text-5xl font-extrabold text-gray-900">Privacy Policy</h1>
-        <p class="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">
+        <h1 class="text-4xl sm:text-5xl font-extrabold text-gray-900 dark:text-gray-100">
+          Privacy Policy
+        </h1>
+        <p class="text-lg sm:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
           Your privacy matters to us. This Privacy Policy explains how we collect, use, 
           and protect your personal information when using our Airbnb Clone platform.
         </p>
       </div>
 
       <!-- Information We Collect -->
-      <div class="space-y-4 border-t pt-8">
-        <h2 class="text-2xl font-bold text-gray-800 flex items-center gap-2">
+      <div class="space-y-4 border-t border-gray-200 dark:border-gray-700 pt-8">
+        <h2 class="text-2xl font-bold text-gray-800 dark:text-gray-100 flex items-center gap-2">
           <i class="fa-solid fa-database text-indigo-600"></i> Information We Collect
         </h2>
-        <ul class="list-disc list-inside text-gray-700 space-y-2">
+        <ul class="list-disc list-inside text-gray-700 dark:text-gray-300 space-y-2">
           <li>Personal details (name, email, phone number).</li>
           <li>Payment information for bookings and hosting.</li>
           <li>Property and listing details when you host.</li>
@@ -28,11 +30,11 @@
       </div>
 
       <!-- How We Use Information -->
-      <div class="space-y-4 border-t pt-8">
-        <h2 class="text-2xl font-bold text-gray-800 flex items-center gap-2">
+      <div class="space-y-4 border-t border-gray-200 dark:border-gray-700 pt-8">
+        <h2 class="text-2xl font-bold text-gray-800 dark:text-gray-100 flex items-center gap-2">
           <i class="fa-solid fa-gear text-indigo-600"></i> How We Use Your Information
         </h2>
-        <p class="text-gray-700 leading-relaxed">
+        <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
           We use your information to provide and improve our services, process bookings, 
           enhance security, personalize your experience, and communicate with you regarding 
           updates and promotions.
@@ -40,11 +42,11 @@
       </div>
 
       <!-- Sharing Policy -->
-      <div class="space-y-4 border-t pt-8">
-        <h2 class="text-2xl font-bold text-gray-800 flex items-center gap-2">
+      <div class="space-y-4 border-t border-gray-200 dark:border-gray-700 pt-8">
+        <h2 class="text-2xl font-bold text-gray-800 dark:text-gray-100 flex items-center gap-2">
           <i class="fa-solid fa-share-nodes text-indigo-600"></i> Sharing Policy
         </h2>
-        <p class="text-gray-700 leading-relaxed">
+        <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
           We do not sell your personal data. Your information is only shared with trusted 
           third parties (such as payment processors) when necessary to complete transactions 
           or comply with legal obligations.
@@ -52,11 +54,11 @@
       </div>
 
       <!-- Your Rights -->
-      <div class="space-y-4 border-t pt-8">
-        <h2 class="text-2xl font-bold text-gray-800 flex items-center gap-2">
+      <div class="space-y-4 border-t border-gray-200 dark:border-gray-700 pt-8">
+        <h2 class="text-2xl font-bold text-gray-800 dark:text-gray-100 flex items-center gap-2">
           <i class="fa-solid fa-user-shield text-indigo-600"></i> Your Rights
         </h2>
-        <ul class="list-disc list-inside text-gray-700 space-y-2">
+        <ul class="list-disc list-inside text-gray-700 dark:text-gray-300 space-y-2">
           <li>Access and review your personal data.</li>
           <li>Request corrections or updates to your information.</li>
           <li>Request deletion of your account and associated data.</li>
@@ -65,16 +67,16 @@
       </div>
 
       <!-- CTA -->
-      <div class="bg-indigo-50 border border-indigo-200 p-8 rounded-2xl text-center space-y-4">
-        <h3 class="text-2xl font-semibold text-indigo-700">🔒 Protecting Your Privacy</h3>
-        <p class="text-gray-600">We are committed to transparency and safeguarding your information.</p>
+      <div class="bg-indigo-50 dark:bg-indigo-900 border border-indigo-200 dark:border-indigo-700 p-8 rounded-2xl text-center space-y-4 transition-colors duration-300">
+        <h3 class="text-2xl font-semibold text-indigo-700 dark:text-indigo-300">🔒 Protecting Your Privacy</h3>
+        <p class="text-gray-600 dark:text-gray-300">We are committed to transparency and safeguarding your information.</p>
         <div class="flex flex-col sm:flex-row justify-center gap-4">
           <a href="/terms" 
-             class="bg-indigo-600 text-white px-6 py-3 rounded-xl shadow hover:bg-indigo-700 transition">
+             class="bg-indigo-600 dark:bg-indigo-700 text-white px-6 py-3 rounded-xl shadow hover:bg-indigo-700 dark:hover:bg-indigo-800 focus:outline-none focus:ring-2 focus:ring-indigo-400 transition">
             View Terms & Conditions
           </a>
           <a href="/" 
-             class="bg-gray-700 text-white px-6 py-3 rounded-xl shadow hover:bg-gray-900 transition">
+             class="bg-gray-700 dark:bg-gray-600 text-white px-6 py-3 rounded-xl shadow hover:bg-gray-900 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-400 transition">
             ← Back to Home
           </a>
         </div>
@@ -82,6 +84,20 @@
 
     </section>
   </main>
-
+<style>
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    .animate-fadeInUp {
+      animation: fadeInUp 0.3s ease-out;
+    }
+  </style>
 </body>
 </html>

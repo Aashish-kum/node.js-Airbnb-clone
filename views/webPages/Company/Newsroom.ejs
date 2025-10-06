@@ -1,14 +1,14 @@
 <%- include('../../partials/head') %>
 </head>
-<body class="bg-gray-50">
+<body class="bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-300">
 
   <main class="container mx-auto mt-10 px-6 sm:px-8">
-    <section class="bg-white shadow-xl rounded-3xl p-8 sm:p-12 space-y-12">
+    <section class="bg-white dark:bg-gray-800 shadow-xl rounded-3xl p-8 sm:p-12 space-y-12 transition-colors duration-300 animate-fadeInUp">
 
       <!-- Hero -->
       <div class="text-center space-y-4">
-        <h1 class="text-4xl sm:text-5xl font-extrabold text-gray-900">Newsroom</h1>
-        <p class="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">
+        <h1 class="text-4xl sm:text-5xl font-extrabold text-gray-900 dark:text-gray-100">Newsroom</h1>
+        <p class="text-lg sm:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
           Stay updated with the latest news, product launches, and announcements from our Airbnb Clone team.
         </p>
       </div>
@@ -17,67 +17,81 @@
       <div class="grid md:grid-cols-2 gap-10">
 
         <!-- Article 1 -->
-        <article class="bg-gray-50 rounded-2xl shadow p-6 hover:shadow-lg transition">
+        <article class="bg-gray-50 dark:bg-gray-700 rounded-2xl shadow p-6 hover:shadow-lg transition duration-300">
           <img src="https://cdn-icons-png.flaticon.com/512/2965/2965879.png" 
                alt="Product launch" 
-               class="w-20 h-20 mb-4">
-          <h2 class="text-xl font-bold text-gray-800 mb-2">🚀 New Booking System Launched</h2>
-          <p class="text-gray-600">
+               class="w-20 h-20 mb-4 mx-auto">
+          <h2 class="text-xl font-bold text-gray-800 dark:text-gray-100 mb-2">🚀 New Booking System Launched</h2>
+          <p class="text-gray-600 dark:text-gray-300">
             Our upgraded booking system allows smoother reservations, with improved calendar syncing and faster confirmations.
           </p>
-          <a href="#" class="text-indigo-600 font-medium hover:underline mt-3 inline-block">Read More →</a>
+          <a href="#" class="text-indigo-600 dark:text-indigo-400 font-medium hover:underline mt-3 inline-block">Read More →</a>
         </article>
 
         <!-- Article 2 -->
-        <article class="bg-gray-50 rounded-2xl shadow p-6 hover:shadow-lg transition">
+        <article class="bg-gray-50 dark:bg-gray-700 rounded-2xl shadow p-6 hover:shadow-lg transition duration-300">
           <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" 
                alt="Team" 
-               class="w-20 h-20 mb-4">
-          <h2 class="text-xl font-bold text-gray-800 mb-2">👥 Team Expansion</h2>
-          <p class="text-gray-600">
+               class="w-20 h-20 mb-4 mx-auto">
+          <h2 class="text-xl font-bold text-gray-800 dark:text-gray-100 mb-2">👥 Team Expansion</h2>
+          <p class="text-gray-600 dark:text-gray-300">
             We’ve welcomed talented developers and designers to scale our platform and bring you better hosting tools.
           </p>
-          <a href="#" class="text-indigo-600 font-medium hover:underline mt-3 inline-block">Read More →</a>
+          <a href="#" class="text-indigo-600 dark:text-indigo-400 font-medium hover:underline mt-3 inline-block">Read More →</a>
         </article>
 
         <!-- Article 3 -->
-        <article class="bg-gray-50 rounded-2xl shadow p-6 hover:shadow-lg transition">
+        <article class="bg-gray-50 dark:bg-gray-700 rounded-2xl shadow p-6 hover:shadow-lg transition duration-300">
           <img src="https://cdn-icons-png.flaticon.com/512/3132/3132693.png" 
                alt="Security update" 
-               class="w-20 h-20 mb-4">
-          <h2 class="text-xl font-bold text-gray-800 mb-2">🔒 Security Enhancements</h2>
-          <p class="text-gray-600">
+               class="w-20 h-20 mb-4 mx-auto">
+          <h2 class="text-xl font-bold text-gray-800 dark:text-gray-100 mb-2">🔒 Security Enhancements</h2>
+          <p class="text-gray-600 dark:text-gray-300">
             We’ve implemented stronger authentication methods and fraud detection to ensure safe hosting and booking.
           </p>
-          <a href="#" class="text-indigo-600 font-medium hover:underline mt-3 inline-block">Read More →</a>
+          <a href="#" class="text-indigo-600 dark:text-indigo-400 font-medium hover:underline mt-3 inline-block">Read More →</a>
         </article>
 
         <!-- Article 4 -->
-        <article class="bg-gray-50 rounded-2xl shadow p-6 hover:shadow-lg transition">
+        <article class="bg-gray-50 dark:bg-gray-700 rounded-2xl shadow p-6 hover:shadow-lg transition duration-300">
           <img src="https://cdn-icons-png.flaticon.com/512/3062/3062634.png" 
                alt="Community" 
-               class="w-20 h-20 mb-4">
-          <h2 class="text-xl font-bold text-gray-800 mb-2">🌍 Community Milestone</h2>
-          <p class="text-gray-600">
+               class="w-20 h-20 mb-4 mx-auto">
+          <h2 class="text-xl font-bold text-gray-800 dark:text-gray-100 mb-2">🌍 Community Milestone</h2>
+          <p class="text-gray-600 dark:text-gray-300">
             Our platform has crossed 10,000 listings worldwide — a huge thank you to our hosts and guests for making it possible.
           </p>
-          <a href="#" class="text-indigo-600 font-medium hover:underline mt-3 inline-block">Read More →</a>
+          <a href="#" class="text-indigo-600 dark:text-indigo-400 font-medium hover:underline mt-3 inline-block">Read More →</a>
         </article>
 
       </div>
 
       <!-- CTA -->
-      <div class="bg-indigo-50 border border-indigo-200 p-8 rounded-2xl text-center space-y-4">
-        <h3 class="text-2xl font-semibold text-indigo-700">📢 Want to Share Your Story?</h3>
-        <p class="text-gray-600">Reach out to our media team for collaborations, press inquiries, or interviews.</p>
+      <div class="bg-indigo-50 dark:bg-indigo-900 border border-indigo-200 dark:border-indigo-700 p-8 rounded-2xl text-center space-y-4 transition-colors duration-300">
+        <h3 class="text-2xl font-semibold text-indigo-700 dark:text-indigo-400">📢 Want to Share Your Story?</h3>
+        <p class="text-gray-600 dark:text-gray-300">Reach out to our media team for collaborations, press inquiries, or interviews.</p>
         <a href="/contact" 
-           class="bg-indigo-600 text-white px-6 py-3 rounded-xl shadow hover:bg-indigo-700 transition">
+           class="bg-indigo-600 dark:bg-indigo-700 text-white px-6 py-3 rounded-xl shadow hover:bg-indigo-700 dark:hover:bg-indigo-600 transition focus:outline-none focus:ring-2 focus:ring-indigo-300">
           Contact Us
         </a>
       </div>
 
     </section>
   </main>
-
+<style>
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    .animate-fadeInUp {
+      animation: fadeInUp 0.3s ease-out;
+    }
+  </style>
 </body>
 </html>

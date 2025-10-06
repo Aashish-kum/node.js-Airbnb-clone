@@ -1,80 +1,79 @@
-<%- include('../../partials/head') %>
+<%- include('../../partials/head.ejs') %>
 </head>
-<body class="bg-gray-50">
-
+<body class="bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-300">
 
   <main class="container mx-auto mt-10 px-6 sm:px-8">
-    <section class="bg-white shadow-xl rounded-3xl p-8 sm:p-12 space-y-12">
+    <section class="bg-white dark:bg-gray-800 shadow-xl rounded-3xl p-8 sm:p-12 space-y-12 transition-colors duration-300">
 
       <!-- Title -->
       <div class="text-center space-y-4">
-        <h1 class="text-4xl sm:text-5xl font-extrabold text-gray-900">Help Center</h1>
-        <p class="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto">
-          Need help with <span class="font-semibold text-indigo-600">Airbnb Clone</span>?  
+        <h1 class="text-4xl sm:text-5xl font-extrabold text-gray-900 dark:text-gray-100">Help Center</h1>
+        <p class="text-lg sm:text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+          Need help with <span class="font-semibold text-indigo-600 dark:text-indigo-400">Airbnb Clone</span>?  
           Find answers to common questions or reach out to us directly.
         </p>
       </div>
 
       <!-- FAQ Section -->
-      <div class="space-y-6 border-t pt-8">
-        <h2 class="text-2xl font-bold text-gray-800 flex items-center gap-2">
+      <div class="space-y-6 border-t border-gray-200 dark:border-gray-700 pt-8">
+        <h2 class="text-2xl font-bold text-gray-800 dark:text-gray-100 flex items-center gap-2">
           <i class="fa-solid fa-circle-question text-indigo-600"></i> Frequently Asked Questions
         </h2>
 
         <div class="space-y-4">
-          <details class="bg-gray-50 rounded-xl p-4 shadow-sm">
-            <summary class="cursor-pointer font-semibold text-gray-800">How do I create an account?</summary>
-            <p class="text-gray-600 mt-2">Click on the <strong>Sign Up</strong> button in the navigation bar, fill in your details, and your account will be created instantly.</p>
+          <details class="bg-gray-50 dark:bg-gray-700 rounded-xl p-4 shadow-sm transition-colors duration-300">
+            <summary class="cursor-pointer font-semibold text-gray-800 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-indigo-500">How do I create an account?</summary>
+            <p class="text-gray-600 dark:text-gray-300 mt-2">Click on the <strong>Sign Up</strong> button in the navigation bar, fill in your details, and your account will be created instantly.</p>
           </details>
 
-          <details class="bg-gray-50 rounded-xl p-4 shadow-sm">
-            <summary class="cursor-pointer font-semibold text-gray-800">How do I list my property?</summary>
-            <p class="text-gray-600 mt-2">After logging in, go to your <strong>Host Dashboard</strong> and click <em>Add Property</em>. You can upload photos, set pricing, and provide details.</p>
+          <details class="bg-gray-50 dark:bg-gray-700 rounded-xl p-4 shadow-sm transition-colors duration-300">
+            <summary class="cursor-pointer font-semibold text-gray-800 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-indigo-500">How do I list my property?</summary>
+            <p class="text-gray-600 dark:text-gray-300 mt-2">After logging in, go to your <strong>Host Dashboard</strong> and click <em>Add Property</em>. You can upload photos, set pricing, and provide details.</p>
           </details>
 
-          <details class="bg-gray-50 rounded-xl p-4 shadow-sm">
-            <summary class="cursor-pointer font-semibold text-gray-800">How can I book a property?</summary>
-            <p class="text-gray-600 mt-2">Use the search bar to find properties, then select your dates and click <strong>Book Now</strong> to confirm your reservation.</p>
+          <details class="bg-gray-50 dark:bg-gray-700 rounded-xl p-4 shadow-sm transition-colors duration-300">
+            <summary class="cursor-pointer font-semibold text-gray-800 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-indigo-500">How can I book a property?</summary>
+            <p class="text-gray-600 dark:text-gray-300 mt-2">Use the search bar to find properties, then select your dates and click <strong>Book Now</strong> to confirm your reservation.</p>
           </details>
 
-          <details class="bg-gray-50 rounded-xl p-4 shadow-sm">
-            <summary class="cursor-pointer font-semibold text-gray-800">Is my data secure?</summary>
-            <p class="text-gray-600 mt-2">Yes. We use secure authentication and encrypted database storage to keep your information safe.</p>
+          <details class="bg-gray-50 dark:bg-gray-700 rounded-xl p-4 shadow-sm transition-colors duration-300">
+            <summary class="cursor-pointer font-semibold text-gray-800 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-indigo-500">Is my data secure?</summary>
+            <p class="text-gray-600 dark:text-gray-300 mt-2">Yes. We use secure authentication and encrypted database storage to keep your information safe.</p>
           </details>
         </div>
       </div>
 
       <!-- Contact Options -->
-      <div class="space-y-6 border-t pt-8">
-        <h2 class="text-2xl font-bold text-gray-800 flex items-center gap-2">
+      <div class="space-y-6 border-t border-gray-200 dark:border-gray-700 pt-8">
+        <h2 class="text-2xl font-bold text-gray-800 dark:text-gray-100 flex items-center gap-2">
           <i class="fa-solid fa-headset text-indigo-600"></i> Contact Support
         </h2>
-        <p class="text-gray-600">Still have questions? Get in touch with our support team:</p>
+        <p class="text-gray-600 dark:text-gray-300">Still have questions? Get in touch with our support team:</p>
 
         <div class="grid sm:grid-cols-3 gap-6">
-          <div class="bg-indigo-50 border border-indigo-200 rounded-xl p-6 text-center hover:shadow-lg transition">
+          <div class="bg-indigo-50 dark:bg-gray-700 border border-indigo-200 dark:border-gray-600 rounded-xl p-6 text-center hover:shadow-lg transition">
             <i class="fa-solid fa-envelope text-2xl text-indigo-600 mb-2"></i>
-            <h3 class="font-semibold text-gray-800">Email Us</h3>
-            <p class="text-gray-600 text-sm">aashmrt51@gmail.com</p>
+            <h3 class="font-semibold text-gray-800 dark:text-gray-100">Email Us</h3>
+            <p class="text-gray-600 dark:text-gray-300 text-sm">aashmrt51@gmail.com</p>
           </div>
-          <div class="bg-indigo-50 border border-indigo-200 rounded-xl p-6 text-center hover:shadow-lg transition">
+          <div class="bg-indigo-50 dark:bg-gray-700 border border-indigo-200 dark:border-gray-600 rounded-xl p-6 text-center hover:shadow-lg transition">
             <i class="fa-solid fa-phone text-2xl text-indigo-600 mb-2"></i>
-            <h3 class="font-semibold text-gray-800">Call Us</h3>
-            <p class="text-gray-600 text-sm">+91 00000 00000</p>
+            <h3 class="font-semibold text-gray-800 dark:text-gray-100">Call Us</h3>
+            <p class="text-gray-600 dark:text-gray-300 text-sm">+91 00000 00000</p>
           </div>
-          <div class="bg-indigo-50 border border-indigo-200 rounded-xl p-6 text-center hover:shadow-lg transition">
+          <div class="bg-indigo-50 dark:bg-gray-700 border border-indigo-200 dark:border-gray-600 rounded-xl p-6 text-center hover:shadow-lg transition">
             <i class="fa-solid fa-comments text-2xl text-indigo-600 mb-2"></i>
-            <h3 class="font-semibold text-gray-800">Live Chat</h3>
-            <p class="text-gray-600 text-sm">Available 9 AM – 6 PM</p>
+            <h3 class="font-semibold text-gray-800 dark:text-gray-100">Live Chat</h3>
+            <p class="text-gray-600 dark:text-gray-300 text-sm">Available 9 AM – 6 PM</p>
           </div>
         </div>
       </div>
 
       <!-- CTA -->
-      <div class="bg-gray-100 p-8 rounded-2xl text-center space-y-4">
-        <h3 class="text-xl font-semibold text-gray-800">Can’t find what you’re looking for?</h3>
+      <div class="bg-gray-100 dark:bg-gray-800 p-8 rounded-2xl text-center space-y-4 transition-colors duration-300">
+        <h3 class="text-xl font-semibold text-gray-800 dark:text-gray-100">Can’t find what you’re looking for?</h3>
         <a href="/" 
-           class="bg-indigo-600 text-white px-6 py-3 rounded-xl shadow hover:bg-indigo-700 transition">
+           class="bg-indigo-600 dark:bg-indigo-500 text-white px-6 py-3 rounded-xl shadow hover:bg-indigo-700 dark:hover:bg-indigo-600 transition focus:outline-none focus:ring-2 focus:ring-indigo-500">
           ← Back to Home
         </a>
       </div>
@@ -82,6 +81,5 @@
     </section>
   </main>
 
-  
 </body>
 </html>

@@ -1,17 +1,17 @@
 <%- include('../../partials/head') %>
 </head>
-<body class="bg-gray-50">
+<body class="bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-300">
 
   <main class="container mx-auto mt-10 px-6 sm:px-8">
-    <section class="bg-white shadow-xl rounded-3xl p-8 sm:p-12 space-y-12">
+    <section class="bg-white dark:bg-gray-800 shadow-xl rounded-3xl p-8 sm:p-12 space-y-12 transition-colors duration-300 animate-fadeInUp">
 
       <!-- Hero -->
       <div class="text-center space-y-6">
         <i class="fa-solid fa-book-open text-indigo-600 text-5xl"></i>
-        <h1 class="text-4xl sm:text-5xl font-extrabold text-gray-900">
+        <h1 class="text-4xl sm:text-5xl font-extrabold text-gray-900 dark:text-gray-100">
           Explore Hosting Resources
         </h1>
-        <p class="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">
+        <p class="text-lg sm:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
           Get the tools, knowledge, and guidance you need to become a successful host. 
           Explore tips, best practices, and resources curated just for you.
         </p>
@@ -19,91 +19,39 @@
 
       <!-- Resource Grid -->
       <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-        
-        <!-- Resource 1 -->
-        <div class="p-6 bg-indigo-50 rounded-2xl shadow hover:shadow-lg transition">
-          <i class="fa-solid fa-lightbulb text-3xl text-indigo-600 mb-4"></i>
-          <h3 class="font-bold text-lg text-gray-900">Hosting Tips</h3>
-          <p class="text-gray-600 text-sm mt-2">
-            Learn how to create a welcoming space, set competitive pricing, and improve your guest experience.
-          </p>
-          <a href="/getting-started" class="text-indigo-600 hover:underline text-sm mt-3 inline-block">
-            Learn More →
-          </a>
-        </div>
 
-        <!-- Resource 2 -->
-        <div class="p-6 bg-indigo-50 rounded-2xl shadow hover:shadow-lg transition">
-          <i class="fa-solid fa-screwdriver-wrench text-3xl text-indigo-600 mb-4"></i>
-          <h3 class="font-bold text-lg text-gray-900">Tools & Features</h3>
-          <p class="text-gray-600 text-sm mt-2">
-            Explore dashboards, booking management tools, and features designed to help you succeed.
-          </p>
-          <a href="/dashboard" class="text-indigo-600 hover:underline text-sm mt-3 inline-block">
-            Explore Tools →
-          </a>
-        </div>
+        <!-- Resource Card Template -->
+        <% const resources = [
+          { icon: 'fa-lightbulb', title: 'Hosting Tips', desc: 'Learn how to create a welcoming space, set competitive pricing, and improve your guest experience.', link: '/getting-started', linkText: 'Learn More →' },
+          { icon: 'fa-screwdriver-wrench', title: 'Tools & Features', desc: 'Explore dashboards, booking management tools, and features designed to help you succeed.', link: '/dashboard', linkText: 'Explore Tools →' },
+          { icon: 'fa-shield-heart', title: 'Safety & Support', desc: 'Learn about AirCover, guest verification, and support resources available to every host.', link: '/airCover', linkText: 'Discover More →' },
+          { icon: 'fa-users', title: 'Community', desc: 'Join the host community, connect with others, and share your experiences in the forum.', link: '/community-forum', linkText: 'Visit Forum →' },
+          { icon: 'fa-graduation-cap', title: 'Learning Hub', desc: 'Access guides, tutorials, and training resources to improve your hosting skills.', link: '#', linkText: 'Start Learning →' },
+          { icon: 'fa-chart-line', title: 'Grow Your Business', desc: 'Learn strategies to increase bookings, boost visibility, and grow your hosting income.', link: '#', linkText: 'See Strategies →' }
+        ]; %>
 
-        <!-- Resource 3 -->
-        <div class="p-6 bg-indigo-50 rounded-2xl shadow hover:shadow-lg transition">
-          <i class="fa-solid fa-shield-heart text-3xl text-indigo-600 mb-4"></i>
-          <h3 class="font-bold text-lg text-gray-900">Safety & Support</h3>
-          <p class="text-gray-600 text-sm mt-2">
-            Learn about AirCover, guest verification, and support resources available to every host.
-          </p>
-          <a href="/airCover" class="text-indigo-600 hover:underline text-sm mt-3 inline-block">
-            Discover More →
-          </a>
-        </div>
+        <% resources.forEach(resource => { %>
+          <div class="p-6 bg-indigo-50 dark:bg-indigo-900 rounded-2xl shadow hover:shadow-lg transition focus-within:ring-2 focus-within:ring-indigo-500" tabindex="0">
+            <i class="fa-solid <%= resource.icon %> text-3xl text-indigo-600 mb-4"></i>
+            <h3 class="font-bold text-lg text-gray-900 dark:text-gray-100"><%= resource.title %></h3>
+            <p class="text-gray-600 dark:text-gray-300 text-sm mt-2"><%= resource.desc %></p>
+            <a href="<%= resource.link %>" class="text-indigo-600 hover:underline text-sm mt-3 inline-block"><%= resource.linkText %></a>
+          </div>
+        <% }) %>
 
-        <!-- Resource 4 -->
-        <div class="p-6 bg-indigo-50 rounded-2xl shadow hover:shadow-lg transition">
-          <i class="fa-solid fa-users text-3xl text-indigo-600 mb-4"></i>
-          <h3 class="font-bold text-lg text-gray-900">Community</h3>
-          <p class="text-gray-600 text-sm mt-2">
-            Join the host community, connect with others, and share your experiences in the forum.
-          </p>
-          <a href="/community-forum" class="text-indigo-600 hover:underline text-sm mt-3 inline-block">
-            Visit Forum →
-          </a>
-        </div>
-
-        <!-- Resource 5 -->
-        <div class="p-6 bg-indigo-50 rounded-2xl shadow hover:shadow-lg transition">
-          <i class="fa-solid fa-graduation-cap text-3xl text-indigo-600 mb-4"></i>
-          <h3 class="font-bold text-lg text-gray-900">Learning Hub</h3>
-          <p class="text-gray-600 text-sm mt-2">
-            Access guides, tutorials, and training resources to improve your hosting skills.
-          </p>
-          <a href="#" class="text-indigo-600 hover:underline text-sm mt-3 inline-block">
-            Start Learning →
-          </a>
-        </div>
-
-        <!-- Resource 6 -->
-        <div class="p-6 bg-indigo-50 rounded-2xl shadow hover:shadow-lg transition">
-          <i class="fa-solid fa-chart-line text-3xl text-indigo-600 mb-4"></i>
-          <h3 class="font-bold text-lg text-gray-900">Grow Your Business</h3>
-          <p class="text-gray-600 text-sm mt-2">
-            Learn strategies to increase bookings, boost visibility, and grow your hosting income.
-          </p>
-          <a href="#" class="text-indigo-600 hover:underline text-sm mt-3 inline-block">
-            See Strategies →
-          </a>
-        </div>
       </div>
 
       <!-- CTA -->
-      <div class="bg-indigo-50 border border-indigo-200 p-8 rounded-2xl text-center space-y-6">
-        <h3 class="text-2xl font-semibold text-indigo-700">🚀 Ready to level up your hosting journey?</h3>
-        <p class="text-gray-600">Use these resources to become a confident and successful host.</p>
+      <div class="bg-indigo-50 dark:bg-indigo-900 border border-indigo-200 dark:border-indigo-700 p-8 rounded-2xl text-center space-y-6 transition-colors duration-300">
+        <h3 class="text-2xl font-semibold text-indigo-700 dark:text-indigo-400">🚀 Ready to level up your hosting journey?</h3>
+        <p class="text-gray-600 dark:text-gray-300">Use these resources to become a confident and successful host.</p>
         <div class="flex flex-col sm:flex-row justify-center gap-4">
           <a href="/hosting" 
-             class="bg-indigo-600 text-white px-8 py-3 rounded-xl shadow hover:bg-indigo-700 transition text-lg">
+             class="bg-indigo-600 dark:bg-indigo-700 text-white px-8 py-3 rounded-xl shadow hover:bg-indigo-700 dark:hover:bg-indigo-600 transition text-lg">
             Start Hosting
           </a>
           <a href="/" 
-             class="bg-gray-700 text-white px-8 py-3 rounded-xl shadow hover:bg-gray-900 transition text-lg">
+             class="bg-gray-700 dark:bg-gray-800 text-white px-8 py-3 rounded-xl shadow hover:bg-gray-900 dark:hover:bg-gray-700 transition text-lg">
             ← Back to Home
           </a>
         </div>
@@ -111,6 +59,20 @@
 
     </section>
   </main>
-
+<style>
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    .animate-fadeInUp {
+      animation: fadeInUp 0.3s ease-out;
+    }
+  </style>
 </body>
 </html>

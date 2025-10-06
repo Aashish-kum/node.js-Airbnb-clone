@@ -1,17 +1,17 @@
 <%- include('../../partials/head') %>
 </head>
-<body class="bg-gray-50">
+<body class="bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-300">
 
   <main class="container mx-auto mt-10 px-6 sm:px-8">
-    <section class="bg-white shadow-xl rounded-3xl p-8 sm:p-12 space-y-12">
+    <section class="bg-white dark:bg-gray-800 shadow-xl rounded-3xl p-8 sm:p-12 space-y-12 transition-colors duration-300 animate-fadeInUp">
 
       <!-- Hero -->
       <div class="text-center space-y-6">
         <i class="fa-solid fa-house-user text-indigo-600 text-5xl"></i>
-        <h1 class="text-4xl sm:text-5xl font-extrabold text-gray-900">
+        <h1 class="text-4xl sm:text-5xl font-extrabold text-gray-900 dark:text-gray-100">
           Airbnb Your Home
         </h1>
-        <p class="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">
+        <p class="text-lg sm:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
           Earn money by sharing your space. Become a host and open the door to new opportunities, 
           connections, and experiences.
         </p>
@@ -19,37 +19,27 @@
 
       <!-- Benefits -->
       <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 text-center">
-        <div class="p-6 bg-indigo-50 rounded-2xl shadow hover:shadow-lg transition">
-          <i class="fa-solid fa-money-bill-wave text-3xl text-indigo-600 mb-4"></i>
-          <h3 class="font-bold text-lg text-gray-900">Extra Income</h3>
-          <p class="text-gray-600 text-sm mt-2">
-            Turn your space into earnings by welcoming guests from around the world.
-          </p>
-        </div>
+        <% const benefits = [
+          { icon: 'fa-money-bill-wave', title: 'Extra Income', desc: 'Turn your space into earnings by welcoming guests from around the world.' },
+          { icon: 'fa-globe', title: 'Global Reach', desc: 'Connect with millions of travelers who are looking for unique stays like yours.' },
+          { icon: 'fa-shield-heart', title: 'AirCover Protection', desc: 'Hosts are backed with comprehensive protection, including damage and liability coverage.' }
+        ]; %>
 
-        <div class="p-6 bg-indigo-50 rounded-2xl shadow hover:shadow-lg transition">
-          <i class="fa-solid fa-globe text-3xl text-indigo-600 mb-4"></i>
-          <h3 class="font-bold text-lg text-gray-900">Global Reach</h3>
-          <p class="text-gray-600 text-sm mt-2">
-            Connect with millions of travelers who are looking for unique stays like yours.
-          </p>
-        </div>
-
-        <div class="p-6 bg-indigo-50 rounded-2xl shadow hover:shadow-lg transition">
-          <i class="fa-solid fa-shield-heart text-3xl text-indigo-600 mb-4"></i>
-          <h3 class="font-bold text-lg text-gray-900">AirCover Protection</h3>
-          <p class="text-gray-600 text-sm mt-2">
-            Hosts are backed with comprehensive protection, including damage and liability coverage.
-          </p>
-        </div>
+        <% benefits.forEach(benefit => { %>
+          <div class="p-6 bg-indigo-50 dark:bg-indigo-900 rounded-2xl shadow hover:shadow-lg transition focus-within:ring-2 focus-within:ring-indigo-500" tabindex="0">
+            <i class="fa-solid <%= benefit.icon %> text-3xl text-indigo-600 mb-4"></i>
+            <h3 class="font-bold text-lg text-gray-900 dark:text-gray-100"><%= benefit.title %></h3>
+            <p class="text-gray-600 dark:text-gray-300 text-sm mt-2"><%= benefit.desc %></p>
+          </div>
+        <% }) %>
       </div>
 
       <!-- Steps -->
       <div class="space-y-6 border-t pt-10">
-        <h2 class="text-2xl font-bold text-gray-800 flex items-center gap-2">
+        <h2 class="text-2xl font-bold text-gray-800 dark:text-gray-100 flex items-center gap-2">
           <i class="fa-solid fa-list-ol text-indigo-600"></i> How to Get Started
         </h2>
-        <ol class="list-decimal list-inside space-y-3 text-gray-700">
+        <ol class="list-decimal list-inside space-y-3 text-gray-700 dark:text-gray-300">
           <li>Sign up and create your Airbnb host account.</li>
           <li>List your space with photos, details, and pricing.</li>
           <li>Set your availability and booking preferences.</li>
@@ -58,16 +48,16 @@
       </div>
 
       <!-- CTA -->
-      <div class="bg-indigo-50 border border-indigo-200 p-8 rounded-2xl text-center space-y-6">
-        <h3 class="text-2xl font-semibold text-indigo-700">Ready to become a host?</h3>
-        <p class="text-gray-600">List your property today and join thousands of successful hosts worldwide.</p>
+      <div class="bg-indigo-50 dark:bg-indigo-900 border border-indigo-200 dark:border-indigo-700 p-8 rounded-2xl text-center space-y-6 transition-colors duration-300">
+        <h3 class="text-2xl font-semibold text-indigo-700 dark:text-indigo-400">Ready to become a host?</h3>
+        <p class="text-gray-600 dark:text-gray-300">List your property today and join thousands of successful hosts worldwide.</p>
         <div class="flex flex-col sm:flex-row justify-center gap-4">
           <a href="/signup" 
-             class="bg-indigo-600 text-white px-8 py-3 rounded-xl shadow hover:bg-indigo-700 transition text-lg">
+             class="bg-indigo-600 dark:bg-indigo-700 text-white px-8 py-3 rounded-xl shadow hover:bg-indigo-700 dark:hover:bg-indigo-600 transition text-lg">
             Start Hosting
           </a>
           <a href="/" 
-             class="bg-gray-700 text-white px-8 py-3 rounded-xl shadow hover:bg-gray-900 transition text-lg">
+             class="bg-gray-700 dark:bg-gray-800 text-white px-8 py-3 rounded-xl shadow hover:bg-gray-900 dark:hover:bg-gray-700 transition text-lg">
             ← Back to Home
           </a>
         </div>
@@ -75,6 +65,20 @@
 
     </section>
   </main>
-
+<style>
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    .animate-fadeInUp {
+      animation: fadeInUp 0.3s ease-out;
+    }
+  </style>
 </body>
 </html>
